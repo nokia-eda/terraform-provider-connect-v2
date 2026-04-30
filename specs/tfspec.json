@@ -1,0 +1,3265 @@
+{
+    "datasources": [
+        {
+            "name": "app_group",
+            "schema": {
+                "attributes": [
+                    {
+                        "name": "api_version",
+                        "string": {
+                            "computed_optional_required": "computed"
+                        }
+                    },
+                    {
+                        "name": "kind",
+                        "string": {
+                            "computed_optional_required": "computed"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "string": {
+                            "computed_optional_required": "computed"
+                        }
+                    },
+                    {
+                        "name": "preferred_version",
+                        "single_nested": {
+                            "computed_optional_required": "computed",
+                            "attributes": [
+                                {
+                                    "name": "group_version",
+                                    "string": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                },
+                                {
+                                    "name": "version",
+                                    "string": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "versions",
+                        "list_nested": {
+                            "computed_optional_required": "computed",
+                            "nested_object": {
+                                "attributes": [
+                                    {
+                                        "name": "group_version",
+                                        "string": {
+                                            "computed_optional_required": "computed"
+                                        }
+                                    },
+                                    {
+                                        "name": "version",
+                                        "string": {
+                                            "computed_optional_required": "computed"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "connect_audit",
+            "schema": {
+                "attributes": [
+                    {
+                        "name": "name",
+                        "string": {
+                            "computed_optional_required": "required",
+                            "description": "name of the ConnectAudit"
+                        }
+                    },
+                    {
+                        "name": "hash",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "description": "resource content will be returned as it was at the time of this git hash"
+                        }
+                    },
+                    {
+                        "name": "namespace",
+                        "string": {
+                            "computed_optional_required": "required",
+                            "description": "the namespace scope in which to operate"
+                        }
+                    },
+                    {
+                        "name": "alarms",
+                        "single_nested": {
+                            "computed_optional_required": "computed",
+                            "attributes": [
+                                {
+                                    "name": "critical",
+                                    "int64": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                },
+                                {
+                                    "name": "major",
+                                    "int64": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                },
+                                {
+                                    "name": "minor",
+                                    "int64": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                },
+                                {
+                                    "name": "warning",
+                                    "int64": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "api_version",
+                        "string": {
+                            "computed_optional_required": "computed"
+                        }
+                    },
+                    {
+                        "name": "deviations",
+                        "single_nested": {
+                            "computed_optional_required": "computed",
+                            "attributes": [
+                                {
+                                    "name": "count",
+                                    "int64": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "kind",
+                        "string": {
+                            "computed_optional_required": "computed"
+                        }
+                    },
+                    {
+                        "name": "metadata",
+                        "single_nested": {
+                            "computed_optional_required": "computed",
+                            "attributes": [
+                                {
+                                    "name": "annotations",
+                                    "map": {
+                                        "computed_optional_required": "computed",
+                                        "element_type": {
+                                            "string": {}
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "labels",
+                                    "map": {
+                                        "computed_optional_required": "computed",
+                                        "element_type": {
+                                            "string": {}
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "name",
+                                    "string": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                },
+                                {
+                                    "name": "namespace",
+                                    "string": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "spec",
+                        "single_nested": {
+                            "computed_optional_required": "optional",
+                            "attributes": [
+                                {
+                                    "name": "connect_plugin_name",
+                                    "string": {
+                                        "computed_optional_required": "optional",
+                                        "description": "ConnectPluginName refers to the ConnectPlugin being audited."
+                                    }
+                                },
+                                {
+                                    "name": "finished",
+                                    "bool": {
+                                        "computed_optional_required": "optional",
+                                        "description": "Finished indicates whether the ConnectAudit is done running."
+                                    }
+                                },
+                                {
+                                    "name": "scope",
+                                    "string": {
+                                        "computed_optional_required": "optional",
+                                        "description": "Scope indicates the scope of the ConnectAudit.\nCurrently supported scopes: Plugin."
+                                    }
+                                }
+                            ],
+                            "description": "ConnectAuditSpec defines the desired state of ConnectAudit"
+                        }
+                    },
+                    {
+                        "name": "status",
+                        "single_nested": {
+                            "computed_optional_required": "computed",
+                            "attributes": [
+                                {
+                                    "name": "end_time",
+                                    "string": {
+                                        "computed_optional_required": "computed",
+                                        "description": "EndTime is when the ConnectAudit reaches a completed State."
+                                    }
+                                },
+                                {
+                                    "name": "enqueue_time",
+                                    "string": {
+                                        "computed_optional_required": "computed",
+                                        "description": "EnqueueTime is the starting time of the ConnectAudit."
+                                    }
+                                },
+                                {
+                                    "name": "failure_reason",
+                                    "string": {
+                                        "computed_optional_required": "computed",
+                                        "description": "FailureReason indicates the reason for a Failure Outcome."
+                                    }
+                                },
+                                {
+                                    "name": "outcome",
+                                    "string": {
+                                        "computed_optional_required": "computed",
+                                        "description": "Outcome indicates the outcome of the ConnectAudit once it is Finished.\nPossible values are Success|Failure."
+                                    }
+                                },
+                                {
+                                    "name": "results",
+                                    "list_nested": {
+                                        "computed_optional_required": "computed",
+                                        "nested_object": {
+                                            "attributes": [
+                                                {
+                                                    "name": "audit_type",
+                                                    "string": {
+                                                        "computed_optional_required": "computed",
+                                                        "description": "AuditType is the type of this Result.\nPossible values are ConnectPluginAudit"
+                                                    }
+                                                },
+                                                {
+                                                    "name": "failure_reason",
+                                                    "string": {
+                                                        "computed_optional_required": "computed",
+                                                        "description": "FailureReason indicates the reason for a Failure Outcome."
+                                                    }
+                                                },
+                                                {
+                                                    "name": "found_discrepancies",
+                                                    "list_nested": {
+                                                        "computed_optional_required": "computed",
+                                                        "nested_object": {
+                                                            "attributes": [
+                                                                {
+                                                                    "name": "connect_resource_kind",
+                                                                    "string": {
+                                                                        "computed_optional_required": "computed",
+                                                                        "description": "The Kind of the resource in Connect."
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "name": "connect_resource_name",
+                                                                    "string": {
+                                                                        "computed_optional_required": "computed",
+                                                                        "description": "The (EDA) name of the resource in Connect."
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "name": "failure_reason",
+                                                                    "string": {
+                                                                        "computed_optional_required": "computed",
+                                                                        "description": "The reason for a Failure Outcome."
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "name": "outcome",
+                                                                    "string": {
+                                                                        "computed_optional_required": "computed",
+                                                                        "description": "The outcome of this Discrepancy.\nPossible values are Success|Failure"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "name": "plugin_resource_kind",
+                                                                    "string": {
+                                                                        "computed_optional_required": "computed",
+                                                                        "description": "The Kind of the resource in the Plugin environment."
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "name": "plugin_resource_uri",
+                                                                    "string": {
+                                                                        "computed_optional_required": "computed",
+                                                                        "description": "The URI of the resource in the Plugin environment."
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "name": "type",
+                                                                    "string": {
+                                                                        "computed_optional_required": "computed",
+                                                                        "description": "Type of discrepancy found during the Audit."
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        "description": "FoundDiscrepancies is a list of found and or corrected discrepancies."
+                                                    }
+                                                },
+                                                {
+                                                    "name": "outcome",
+                                                    "string": {
+                                                        "computed_optional_required": "computed",
+                                                        "description": "Outcome indicates the outcome of this Result once it is Finished.\nPossible values are Success|Failure"
+                                                    }
+                                                },
+                                                {
+                                                    "name": "state",
+                                                    "string": {
+                                                        "computed_optional_required": "computed",
+                                                        "description": "State indicates the state of this Result.\nPossible values are Scheduled|Finished|InProgress"
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        "description": "Results is a list of Audit substeps performed."
+                                    }
+                                },
+                                {
+                                    "name": "state",
+                                    "string": {
+                                        "computed_optional_required": "computed",
+                                        "description": "State indicates the state of the overall ConnectAudit.\nPossible values are Scheduled|Finished|InProgress."
+                                    }
+                                },
+                                {
+                                    "name": "total_number_of_discrepancies",
+                                    "int64": {
+                                        "computed_optional_required": "computed",
+                                        "description": "TotalNumberOfDiscrepancies indicates the amount of entries in the Audit Report."
+                                    }
+                                },
+                                {
+                                    "name": "total_number_of_failed_discrepancies",
+                                    "int64": {
+                                        "computed_optional_required": "computed",
+                                        "description": "TotalNumberOfFailedDiscrepancies indicates the amount of entries in the Results that have failed\nto be resolved. Manual action is required here."
+                                    }
+                                },
+                                {
+                                    "name": "total_number_of_successful_discrepancies",
+                                    "int64": {
+                                        "computed_optional_required": "computed",
+                                        "description": "TotalNumberOfSuccessfulDiscrepancies indicates the amount of entries in the Audit Report that have successfully\nbeen resolved."
+                                    }
+                                }
+                            ],
+                            "description": "ConnectAuditStatus defines the observed state of ConnectAudit"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "connect_audit_list",
+            "schema": {
+                "attributes": [
+                    {
+                        "name": "fields",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "description": "a comma-separated list of resource fields to fetch/return.  If unspecified, all fields are fetched.  If empty, only key-fields are fetched."
+                        }
+                    },
+                    {
+                        "name": "filter",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "description": "an EQL \"where\" expression that will be used to filter the set of resources returned."
+                        }
+                    },
+                    {
+                        "name": "label_selector",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "description": "A label selector string to filter the results based on resource labels. If specified multiple times, the union of resources which satisfy a label-selector will be returned."
+                        }
+                    },
+                    {
+                        "name": "labelselector",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "description": "Deprecated: a label selector string to filter the results based on CR labels"
+                        }
+                    },
+                    {
+                        "name": "namespace",
+                        "string": {
+                            "computed_optional_required": "required",
+                            "description": "the namespace scope in which to operate"
+                        }
+                    },
+                    {
+                        "name": "api_version",
+                        "string": {
+                            "computed_optional_required": "computed"
+                        }
+                    },
+                    {
+                        "name": "items",
+                        "list_nested": {
+                            "computed_optional_required": "computed",
+                            "nested_object": {
+                                "attributes": [
+                                    {
+                                        "name": "alarms",
+                                        "single_nested": {
+                                            "computed_optional_required": "computed",
+                                            "attributes": [
+                                                {
+                                                    "name": "critical",
+                                                    "int64": {
+                                                        "computed_optional_required": "computed"
+                                                    }
+                                                },
+                                                {
+                                                    "name": "major",
+                                                    "int64": {
+                                                        "computed_optional_required": "computed"
+                                                    }
+                                                },
+                                                {
+                                                    "name": "minor",
+                                                    "int64": {
+                                                        "computed_optional_required": "computed"
+                                                    }
+                                                },
+                                                {
+                                                    "name": "warning",
+                                                    "int64": {
+                                                        "computed_optional_required": "computed"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "api_version",
+                                        "string": {
+                                            "computed_optional_required": "computed"
+                                        }
+                                    },
+                                    {
+                                        "name": "deviations",
+                                        "single_nested": {
+                                            "computed_optional_required": "computed",
+                                            "attributes": [
+                                                {
+                                                    "name": "count",
+                                                    "int64": {
+                                                        "computed_optional_required": "computed"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "kind",
+                                        "string": {
+                                            "computed_optional_required": "computed"
+                                        }
+                                    },
+                                    {
+                                        "name": "metadata",
+                                        "single_nested": {
+                                            "computed_optional_required": "computed",
+                                            "attributes": [
+                                                {
+                                                    "name": "annotations",
+                                                    "map": {
+                                                        "computed_optional_required": "computed",
+                                                        "element_type": {
+                                                            "string": {}
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "name": "labels",
+                                                    "map": {
+                                                        "computed_optional_required": "computed",
+                                                        "element_type": {
+                                                            "string": {}
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "name": "name",
+                                                    "string": {
+                                                        "computed_optional_required": "computed"
+                                                    }
+                                                },
+                                                {
+                                                    "name": "namespace",
+                                                    "string": {
+                                                        "computed_optional_required": "computed"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "spec",
+                                        "single_nested": {
+                                            "computed_optional_required": "optional",
+                                            "attributes": [
+                                                {
+                                                    "name": "connect_plugin_name",
+                                                    "string": {
+                                                        "computed_optional_required": "optional",
+                                                        "description": "ConnectPluginName refers to the ConnectPlugin being audited."
+                                                    }
+                                                },
+                                                {
+                                                    "name": "finished",
+                                                    "bool": {
+                                                        "computed_optional_required": "optional",
+                                                        "description": "Finished indicates whether the ConnectAudit is done running."
+                                                    }
+                                                },
+                                                {
+                                                    "name": "scope",
+                                                    "string": {
+                                                        "computed_optional_required": "optional",
+                                                        "description": "Scope indicates the scope of the ConnectAudit.\nCurrently supported scopes: Plugin."
+                                                    }
+                                                }
+                                            ],
+                                            "description": "ConnectAuditSpec defines the desired state of ConnectAudit"
+                                        }
+                                    },
+                                    {
+                                        "name": "status",
+                                        "single_nested": {
+                                            "computed_optional_required": "computed",
+                                            "attributes": [
+                                                {
+                                                    "name": "end_time",
+                                                    "string": {
+                                                        "computed_optional_required": "computed",
+                                                        "description": "EndTime is when the ConnectAudit reaches a completed State."
+                                                    }
+                                                },
+                                                {
+                                                    "name": "enqueue_time",
+                                                    "string": {
+                                                        "computed_optional_required": "computed",
+                                                        "description": "EnqueueTime is the starting time of the ConnectAudit."
+                                                    }
+                                                },
+                                                {
+                                                    "name": "failure_reason",
+                                                    "string": {
+                                                        "computed_optional_required": "computed",
+                                                        "description": "FailureReason indicates the reason for a Failure Outcome."
+                                                    }
+                                                },
+                                                {
+                                                    "name": "outcome",
+                                                    "string": {
+                                                        "computed_optional_required": "computed",
+                                                        "description": "Outcome indicates the outcome of the ConnectAudit once it is Finished.\nPossible values are Success|Failure."
+                                                    }
+                                                },
+                                                {
+                                                    "name": "results",
+                                                    "list_nested": {
+                                                        "computed_optional_required": "computed",
+                                                        "nested_object": {
+                                                            "attributes": [
+                                                                {
+                                                                    "name": "audit_type",
+                                                                    "string": {
+                                                                        "computed_optional_required": "computed",
+                                                                        "description": "AuditType is the type of this Result.\nPossible values are ConnectPluginAudit"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "name": "failure_reason",
+                                                                    "string": {
+                                                                        "computed_optional_required": "computed",
+                                                                        "description": "FailureReason indicates the reason for a Failure Outcome."
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "name": "found_discrepancies",
+                                                                    "list_nested": {
+                                                                        "computed_optional_required": "computed",
+                                                                        "nested_object": {
+                                                                            "attributes": [
+                                                                                {
+                                                                                    "name": "connect_resource_kind",
+                                                                                    "string": {
+                                                                                        "computed_optional_required": "computed",
+                                                                                        "description": "The Kind of the resource in Connect."
+                                                                                    }
+                                                                                },
+                                                                                {
+                                                                                    "name": "connect_resource_name",
+                                                                                    "string": {
+                                                                                        "computed_optional_required": "computed",
+                                                                                        "description": "The (EDA) name of the resource in Connect."
+                                                                                    }
+                                                                                },
+                                                                                {
+                                                                                    "name": "failure_reason",
+                                                                                    "string": {
+                                                                                        "computed_optional_required": "computed",
+                                                                                        "description": "The reason for a Failure Outcome."
+                                                                                    }
+                                                                                },
+                                                                                {
+                                                                                    "name": "outcome",
+                                                                                    "string": {
+                                                                                        "computed_optional_required": "computed",
+                                                                                        "description": "The outcome of this Discrepancy.\nPossible values are Success|Failure"
+                                                                                    }
+                                                                                },
+                                                                                {
+                                                                                    "name": "plugin_resource_kind",
+                                                                                    "string": {
+                                                                                        "computed_optional_required": "computed",
+                                                                                        "description": "The Kind of the resource in the Plugin environment."
+                                                                                    }
+                                                                                },
+                                                                                {
+                                                                                    "name": "plugin_resource_uri",
+                                                                                    "string": {
+                                                                                        "computed_optional_required": "computed",
+                                                                                        "description": "The URI of the resource in the Plugin environment."
+                                                                                    }
+                                                                                },
+                                                                                {
+                                                                                    "name": "type",
+                                                                                    "string": {
+                                                                                        "computed_optional_required": "computed",
+                                                                                        "description": "Type of discrepancy found during the Audit."
+                                                                                    }
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        "description": "FoundDiscrepancies is a list of found and or corrected discrepancies."
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "name": "outcome",
+                                                                    "string": {
+                                                                        "computed_optional_required": "computed",
+                                                                        "description": "Outcome indicates the outcome of this Result once it is Finished.\nPossible values are Success|Failure"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "name": "state",
+                                                                    "string": {
+                                                                        "computed_optional_required": "computed",
+                                                                        "description": "State indicates the state of this Result.\nPossible values are Scheduled|Finished|InProgress"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        "description": "Results is a list of Audit substeps performed."
+                                                    }
+                                                },
+                                                {
+                                                    "name": "state",
+                                                    "string": {
+                                                        "computed_optional_required": "computed",
+                                                        "description": "State indicates the state of the overall ConnectAudit.\nPossible values are Scheduled|Finished|InProgress."
+                                                    }
+                                                },
+                                                {
+                                                    "name": "total_number_of_discrepancies",
+                                                    "int64": {
+                                                        "computed_optional_required": "computed",
+                                                        "description": "TotalNumberOfDiscrepancies indicates the amount of entries in the Audit Report."
+                                                    }
+                                                },
+                                                {
+                                                    "name": "total_number_of_failed_discrepancies",
+                                                    "int64": {
+                                                        "computed_optional_required": "computed",
+                                                        "description": "TotalNumberOfFailedDiscrepancies indicates the amount of entries in the Results that have failed\nto be resolved. Manual action is required here."
+                                                    }
+                                                },
+                                                {
+                                                    "name": "total_number_of_successful_discrepancies",
+                                                    "int64": {
+                                                        "computed_optional_required": "computed",
+                                                        "description": "TotalNumberOfSuccessfulDiscrepancies indicates the amount of entries in the Audit Report that have successfully\nbeen resolved."
+                                                    }
+                                                }
+                                            ],
+                                            "description": "ConnectAuditStatus defines the observed state of ConnectAudit"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "kind",
+                        "string": {
+                            "computed_optional_required": "computed"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "connect_interface",
+            "schema": {
+                "attributes": [
+                    {
+                        "name": "name",
+                        "string": {
+                            "computed_optional_required": "required",
+                            "description": "name of the ConnectInterface"
+                        }
+                    },
+                    {
+                        "name": "hash",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "description": "resource content will be returned as it was at the time of this git hash"
+                        }
+                    },
+                    {
+                        "name": "namespace",
+                        "string": {
+                            "computed_optional_required": "required",
+                            "description": "the namespace scope in which to operate"
+                        }
+                    },
+                    {
+                        "name": "alarms",
+                        "single_nested": {
+                            "computed_optional_required": "computed",
+                            "attributes": [
+                                {
+                                    "name": "critical",
+                                    "int64": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                },
+                                {
+                                    "name": "major",
+                                    "int64": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                },
+                                {
+                                    "name": "minor",
+                                    "int64": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                },
+                                {
+                                    "name": "warning",
+                                    "int64": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "api_version",
+                        "string": {
+                            "computed_optional_required": "computed"
+                        }
+                    },
+                    {
+                        "name": "deviations",
+                        "single_nested": {
+                            "computed_optional_required": "computed",
+                            "attributes": [
+                                {
+                                    "name": "count",
+                                    "int64": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "kind",
+                        "string": {
+                            "computed_optional_required": "computed"
+                        }
+                    },
+                    {
+                        "name": "metadata",
+                        "single_nested": {
+                            "computed_optional_required": "computed",
+                            "attributes": [
+                                {
+                                    "name": "annotations",
+                                    "map": {
+                                        "computed_optional_required": "computed",
+                                        "element_type": {
+                                            "string": {}
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "labels",
+                                    "map": {
+                                        "computed_optional_required": "computed",
+                                        "element_type": {
+                                            "string": {}
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "name",
+                                    "string": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                },
+                                {
+                                    "name": "namespace",
+                                    "string": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "spec",
+                        "single_nested": {
+                            "computed_optional_required": "optional",
+                            "attributes": [
+                                {
+                                    "name": "bond",
+                                    "single_nested": {
+                                        "computed_optional_required": "optional",
+                                        "attributes": [
+                                            {
+                                                "name": "chassis_id",
+                                                "string": {
+                                                    "computed_optional_required": "optional",
+                                                    "description": "The Chassis ID of the top-of-rack switch to which this compute interface is connected, received through LLDP."
+                                                }
+                                            },
+                                            {
+                                                "name": "host_name",
+                                                "string": {
+                                                    "computed_optional_required": "optional",
+                                                    "description": "The FQDN of the host this compute port belongs to (eg. compute01.example.com)."
+                                                }
+                                            },
+                                            {
+                                                "name": "interface_name",
+                                                "string": {
+                                                    "computed_optional_required": "optional",
+                                                    "description": "The logical interface name of the compute port (eg. eth0)."
+                                                }
+                                            },
+                                            {
+                                                "name": "port_id",
+                                                "string": {
+                                                    "computed_optional_required": "optional",
+                                                    "description": "The Port ID of the top-of-rack switch to which this compute interface is connected, received through LLDP."
+                                                }
+                                            },
+                                            {
+                                                "name": "system_name",
+                                                "string": {
+                                                    "computed_optional_required": "optional",
+                                                    "description": "The System name of the top-of-rack switch to which this compute interface is connected, received through LLDP."
+                                                }
+                                            }
+                                        ],
+                                        "description": "An Optional Bond definition, indicating the naming of a Bond on the Compute."
+                                    }
+                                },
+                                {
+                                    "name": "members",
+                                    "list_nested": {
+                                        "computed_optional_required": "optional",
+                                        "nested_object": {
+                                            "attributes": [
+                                                {
+                                                    "name": "chassis_id",
+                                                    "string": {
+                                                        "computed_optional_required": "optional",
+                                                        "description": "The Chassis ID of the top-of-rack switch to which this compute interface is connected, received through LLDP."
+                                                    }
+                                                },
+                                                {
+                                                    "name": "host_name",
+                                                    "string": {
+                                                        "computed_optional_required": "optional",
+                                                        "description": "The FQDN of the host this compute port belongs to (eg. compute01.example.com)."
+                                                    }
+                                                },
+                                                {
+                                                    "name": "interface_name",
+                                                    "string": {
+                                                        "computed_optional_required": "optional",
+                                                        "description": "The logical interface name of the compute port (eg. eth0)."
+                                                    }
+                                                },
+                                                {
+                                                    "name": "port_id",
+                                                    "string": {
+                                                        "computed_optional_required": "optional",
+                                                        "description": "The Port ID of the top-of-rack switch to which this compute interface is connected, received through LLDP."
+                                                    }
+                                                },
+                                                {
+                                                    "name": "system_name",
+                                                    "string": {
+                                                        "computed_optional_required": "optional",
+                                                        "description": "The System name of the top-of-rack switch to which this compute interface is connected, received through LLDP."
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        "description": "A list of InterfaceMembers indicating which Compute Interfaces are part of this ConnectInterface.\nFor non-LAG interfaces, this is a list of one element."
+                                    }
+                                }
+                            ],
+                            "description": "ConnectInterfaceSpec defines the desired state of ConnectInterface"
+                        }
+                    },
+                    {
+                        "name": "status",
+                        "single_nested": {
+                            "computed_optional_required": "computed",
+                            "attributes": [
+                                {
+                                    "name": "current_interface",
+                                    "string": {
+                                        "computed_optional_required": "computed",
+                                        "description": "Indicates the current EDA CachedInterface this ConnectInterface is connected to."
+                                    }
+                                },
+                                {
+                                    "name": "operational_status",
+                                    "string": {
+                                        "computed_optional_required": "computed",
+                                        "description": "Indicates the current operational state of the ConnectInterface."
+                                    }
+                                }
+                            ],
+                            "description": "ConnectInterfaceStatus defines the observed state of ConnectInterface"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "connect_interface_list",
+            "schema": {
+                "attributes": [
+                    {
+                        "name": "fields",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "description": "a comma-separated list of resource fields to fetch/return.  If unspecified, all fields are fetched.  If empty, only key-fields are fetched."
+                        }
+                    },
+                    {
+                        "name": "filter",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "description": "an EQL \"where\" expression that will be used to filter the set of resources returned."
+                        }
+                    },
+                    {
+                        "name": "label_selector",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "description": "A label selector string to filter the results based on resource labels. If specified multiple times, the union of resources which satisfy a label-selector will be returned."
+                        }
+                    },
+                    {
+                        "name": "labelselector",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "description": "Deprecated: a label selector string to filter the results based on CR labels"
+                        }
+                    },
+                    {
+                        "name": "namespace",
+                        "string": {
+                            "computed_optional_required": "required",
+                            "description": "the namespace scope in which to operate"
+                        }
+                    },
+                    {
+                        "name": "api_version",
+                        "string": {
+                            "computed_optional_required": "computed"
+                        }
+                    },
+                    {
+                        "name": "items",
+                        "list_nested": {
+                            "computed_optional_required": "computed",
+                            "nested_object": {
+                                "attributes": [
+                                    {
+                                        "name": "alarms",
+                                        "single_nested": {
+                                            "computed_optional_required": "computed",
+                                            "attributes": [
+                                                {
+                                                    "name": "critical",
+                                                    "int64": {
+                                                        "computed_optional_required": "computed"
+                                                    }
+                                                },
+                                                {
+                                                    "name": "major",
+                                                    "int64": {
+                                                        "computed_optional_required": "computed"
+                                                    }
+                                                },
+                                                {
+                                                    "name": "minor",
+                                                    "int64": {
+                                                        "computed_optional_required": "computed"
+                                                    }
+                                                },
+                                                {
+                                                    "name": "warning",
+                                                    "int64": {
+                                                        "computed_optional_required": "computed"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "api_version",
+                                        "string": {
+                                            "computed_optional_required": "computed"
+                                        }
+                                    },
+                                    {
+                                        "name": "deviations",
+                                        "single_nested": {
+                                            "computed_optional_required": "computed",
+                                            "attributes": [
+                                                {
+                                                    "name": "count",
+                                                    "int64": {
+                                                        "computed_optional_required": "computed"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "kind",
+                                        "string": {
+                                            "computed_optional_required": "computed"
+                                        }
+                                    },
+                                    {
+                                        "name": "metadata",
+                                        "single_nested": {
+                                            "computed_optional_required": "computed",
+                                            "attributes": [
+                                                {
+                                                    "name": "annotations",
+                                                    "map": {
+                                                        "computed_optional_required": "computed",
+                                                        "element_type": {
+                                                            "string": {}
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "name": "labels",
+                                                    "map": {
+                                                        "computed_optional_required": "computed",
+                                                        "element_type": {
+                                                            "string": {}
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "name": "name",
+                                                    "string": {
+                                                        "computed_optional_required": "computed"
+                                                    }
+                                                },
+                                                {
+                                                    "name": "namespace",
+                                                    "string": {
+                                                        "computed_optional_required": "computed"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "spec",
+                                        "single_nested": {
+                                            "computed_optional_required": "optional",
+                                            "attributes": [
+                                                {
+                                                    "name": "bond",
+                                                    "single_nested": {
+                                                        "computed_optional_required": "optional",
+                                                        "attributes": [
+                                                            {
+                                                                "name": "chassis_id",
+                                                                "string": {
+                                                                    "computed_optional_required": "optional",
+                                                                    "description": "The Chassis ID of the top-of-rack switch to which this compute interface is connected, received through LLDP."
+                                                                }
+                                                            },
+                                                            {
+                                                                "name": "host_name",
+                                                                "string": {
+                                                                    "computed_optional_required": "optional",
+                                                                    "description": "The FQDN of the host this compute port belongs to (eg. compute01.example.com)."
+                                                                }
+                                                            },
+                                                            {
+                                                                "name": "interface_name",
+                                                                "string": {
+                                                                    "computed_optional_required": "optional",
+                                                                    "description": "The logical interface name of the compute port (eg. eth0)."
+                                                                }
+                                                            },
+                                                            {
+                                                                "name": "port_id",
+                                                                "string": {
+                                                                    "computed_optional_required": "optional",
+                                                                    "description": "The Port ID of the top-of-rack switch to which this compute interface is connected, received through LLDP."
+                                                                }
+                                                            },
+                                                            {
+                                                                "name": "system_name",
+                                                                "string": {
+                                                                    "computed_optional_required": "optional",
+                                                                    "description": "The System name of the top-of-rack switch to which this compute interface is connected, received through LLDP."
+                                                                }
+                                                            }
+                                                        ],
+                                                        "description": "An Optional Bond definition, indicating the naming of a Bond on the Compute."
+                                                    }
+                                                },
+                                                {
+                                                    "name": "members",
+                                                    "list_nested": {
+                                                        "computed_optional_required": "optional",
+                                                        "nested_object": {
+                                                            "attributes": [
+                                                                {
+                                                                    "name": "chassis_id",
+                                                                    "string": {
+                                                                        "computed_optional_required": "optional",
+                                                                        "description": "The Chassis ID of the top-of-rack switch to which this compute interface is connected, received through LLDP."
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "name": "host_name",
+                                                                    "string": {
+                                                                        "computed_optional_required": "optional",
+                                                                        "description": "The FQDN of the host this compute port belongs to (eg. compute01.example.com)."
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "name": "interface_name",
+                                                                    "string": {
+                                                                        "computed_optional_required": "optional",
+                                                                        "description": "The logical interface name of the compute port (eg. eth0)."
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "name": "port_id",
+                                                                    "string": {
+                                                                        "computed_optional_required": "optional",
+                                                                        "description": "The Port ID of the top-of-rack switch to which this compute interface is connected, received through LLDP."
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "name": "system_name",
+                                                                    "string": {
+                                                                        "computed_optional_required": "optional",
+                                                                        "description": "The System name of the top-of-rack switch to which this compute interface is connected, received through LLDP."
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        "description": "A list of InterfaceMembers indicating which Compute Interfaces are part of this ConnectInterface.\nFor non-LAG interfaces, this is a list of one element."
+                                                    }
+                                                }
+                                            ],
+                                            "description": "ConnectInterfaceSpec defines the desired state of ConnectInterface"
+                                        }
+                                    },
+                                    {
+                                        "name": "status",
+                                        "single_nested": {
+                                            "computed_optional_required": "computed",
+                                            "attributes": [
+                                                {
+                                                    "name": "current_interface",
+                                                    "string": {
+                                                        "computed_optional_required": "computed",
+                                                        "description": "Indicates the current EDA CachedInterface this ConnectInterface is connected to."
+                                                    }
+                                                },
+                                                {
+                                                    "name": "operational_status",
+                                                    "string": {
+                                                        "computed_optional_required": "computed",
+                                                        "description": "Indicates the current operational state of the ConnectInterface."
+                                                    }
+                                                }
+                                            ],
+                                            "description": "ConnectInterfaceStatus defines the observed state of ConnectInterface"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "kind",
+                        "string": {
+                            "computed_optional_required": "computed"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "connect_plugin",
+            "schema": {
+                "attributes": [
+                    {
+                        "name": "name",
+                        "string": {
+                            "computed_optional_required": "required",
+                            "description": "name of the ConnectPlugin"
+                        }
+                    },
+                    {
+                        "name": "hash",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "description": "resource content will be returned as it was at the time of this git hash"
+                        }
+                    },
+                    {
+                        "name": "namespace",
+                        "string": {
+                            "computed_optional_required": "required",
+                            "description": "the namespace scope in which to operate"
+                        }
+                    },
+                    {
+                        "name": "alarms",
+                        "single_nested": {
+                            "computed_optional_required": "computed",
+                            "attributes": [
+                                {
+                                    "name": "critical",
+                                    "int64": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                },
+                                {
+                                    "name": "major",
+                                    "int64": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                },
+                                {
+                                    "name": "minor",
+                                    "int64": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                },
+                                {
+                                    "name": "warning",
+                                    "int64": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "api_version",
+                        "string": {
+                            "computed_optional_required": "computed"
+                        }
+                    },
+                    {
+                        "name": "deviations",
+                        "single_nested": {
+                            "computed_optional_required": "computed",
+                            "attributes": [
+                                {
+                                    "name": "count",
+                                    "int64": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "kind",
+                        "string": {
+                            "computed_optional_required": "computed"
+                        }
+                    },
+                    {
+                        "name": "metadata",
+                        "single_nested": {
+                            "computed_optional_required": "computed",
+                            "attributes": [
+                                {
+                                    "name": "annotations",
+                                    "map": {
+                                        "computed_optional_required": "computed",
+                                        "element_type": {
+                                            "string": {}
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "labels",
+                                    "map": {
+                                        "computed_optional_required": "computed",
+                                        "element_type": {
+                                            "string": {}
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "name",
+                                    "string": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                },
+                                {
+                                    "name": "namespace",
+                                    "string": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "spec",
+                        "single_nested": {
+                            "computed_optional_required": "optional",
+                            "attributes": [
+                                {
+                                    "name": "description",
+                                    "string": {
+                                        "computed_optional_required": "optional",
+                                        "description": "A human-readable representation of the Plugin."
+                                    }
+                                },
+                                {
+                                    "name": "heartbeat_interval_seconds",
+                                    "int64": {
+                                        "computed_optional_required": "optional",
+                                        "description": "The interval in seconds in which the Plugin will heartbeat.\nWhen the interval is 0, heartbeating will be disabled."
+                                    }
+                                },
+                                {
+                                    "name": "plugin_type",
+                                    "string": {
+                                        "computed_optional_required": "optional",
+                                        "description": "Indicates the type of the Cloud Management System managed by this Plugin. Eg. VMware, OpenStack."
+                                    }
+                                },
+                                {
+                                    "name": "required_plugins",
+                                    "list": {
+                                        "computed_optional_required": "optional",
+                                        "element_type": {
+                                            "string": {}
+                                        },
+                                        "description": "A list of ConnectPlugins whose resources this ConnectPlugin will require, this signifies an explicit\nrelationship between this Plugin and the Required Plugins."
+                                    }
+                                },
+                                {
+                                    "name": "supported_actionables",
+                                    "list": {
+                                        "computed_optional_required": "optional",
+                                        "element_type": {
+                                            "string": {}
+                                        },
+                                        "description": "The list of Actionable identifiers that this Plugin supports."
+                                    }
+                                }
+                            ],
+                            "description": "ConnectPluginSpec defines the desired state of ConnectPlugin"
+                        }
+                    },
+                    {
+                        "name": "status",
+                        "single_nested": {
+                            "computed_optional_required": "computed",
+                            "attributes": [
+                                {
+                                    "name": "stale",
+                                    "bool": {
+                                        "computed_optional_required": "computed",
+                                        "description": "When a plugin registers with a certain heartbeatinterval and it does not meet that contract, Connect will assume\nthat the plugin is Stale / non-responsive. An alarm is raised when the plugin is Stale."
+                                    }
+                                }
+                            ],
+                            "description": "ConnectPluginStatus defines the observed state of ConnectPlugin"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "connect_plugin_actionable",
+            "schema": {
+                "attributes": [
+                    {
+                        "name": "name",
+                        "string": {
+                            "computed_optional_required": "required",
+                            "description": "name of the ConnectPluginActionable"
+                        }
+                    },
+                    {
+                        "name": "hash",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "description": "resource content will be returned as it was at the time of this git hash"
+                        }
+                    },
+                    {
+                        "name": "namespace",
+                        "string": {
+                            "computed_optional_required": "required",
+                            "description": "the namespace scope in which to operate"
+                        }
+                    },
+                    {
+                        "name": "alarms",
+                        "single_nested": {
+                            "computed_optional_required": "computed",
+                            "attributes": [
+                                {
+                                    "name": "critical",
+                                    "int64": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                },
+                                {
+                                    "name": "major",
+                                    "int64": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                },
+                                {
+                                    "name": "minor",
+                                    "int64": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                },
+                                {
+                                    "name": "warning",
+                                    "int64": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "api_version",
+                        "string": {
+                            "computed_optional_required": "computed"
+                        }
+                    },
+                    {
+                        "name": "deviations",
+                        "single_nested": {
+                            "computed_optional_required": "computed",
+                            "attributes": [
+                                {
+                                    "name": "count",
+                                    "int64": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "kind",
+                        "string": {
+                            "computed_optional_required": "computed"
+                        }
+                    },
+                    {
+                        "name": "metadata",
+                        "single_nested": {
+                            "computed_optional_required": "computed",
+                            "attributes": [
+                                {
+                                    "name": "annotations",
+                                    "map": {
+                                        "computed_optional_required": "computed",
+                                        "element_type": {
+                                            "string": {}
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "labels",
+                                    "map": {
+                                        "computed_optional_required": "computed",
+                                        "element_type": {
+                                            "string": {}
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "name",
+                                    "string": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                },
+                                {
+                                    "name": "namespace",
+                                    "string": {
+                                        "computed_optional_required": "computed"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "spec",
+                        "single_nested": {
+                            "computed_optional_required": "optional",
+                            "attributes": [
+                                {
+                                    "name": "attributes",
+                                    "map": {
+                                        "computed_optional_required": "optional",
+                                        "element_type": {
+                                            "string": {}
+                                        },
+                                        "description": "A map of attributes associated with the Verb for this Actionable."
+                                    }
+                                },
+                                {
+                                    "name": "verb",
+                                    "string": {
+                                        "computed_optional_required": "optional",
+                                        "description": "The keyword for the operation that should be executed by the Plugin (Eg. AuditRequested)."
+                                    }
+                                }
+                            ],
+                            "description": "ConnectPluginActionableSpec defines the desired state of ConnectPluginActionable"
+                        }
+                    },
+                    {
+                        "name": "status",
+                        "single_nested": {
+                            "computed_optional_required": "computed",
+                            "description": "ConnectPluginActionableStatus defines the observed state of ConnectPluginActionable"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "connect_plugin_actionable_list",
+            "schema": {
+                "attributes": [
+                    {
+                        "name": "fields",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "description": "a comma-separated list of resource fields to fetch/return.  If unspecified, all fields are fetched.  If empty, only key-fields are fetched."
+                        }
+                    },
+                    {
+                        "name": "filter",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "description": "an EQL \"where\" expression that will be used to filter the set of resources returned."
+                        }
+                    },
+                    {
+                        "name": "label_selector",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "description": "A label selector string to filter the results based on resource labels. If specified multiple times, the union of resources which satisfy a label-selector will be returned."
+                        }
+                    },
+                    {
+                        "name": "labelselector",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "description": "Deprecated: a label selector string to filter the results based on CR labels"
+                        }
+                    },
+                    {
+                        "name": "namespace",
+                        "string": {
+                            "computed_optional_required": "required",
+                            "description": "the namespace scope in which to operate"
+                        }
+                    },
+                    {
+                        "name": "api_version",
+                        "string": {
+                            "computed_optional_required": "computed"
+                        }
+                    },
+                    {
+                        "name": "items",
+                        "list_nested": {
+                            "computed_optional_required": "computed",
+                            "nested_object": {
+                                "attributes": [
+                                    {
+                                        "name": "alarms",
+                                        "single_nested": {
+                                            "computed_optional_required": "computed",
+                                            "attributes": [
+                                                {
+                                                    "name": "critical",
+                                                    "int64": {
+                                                        "computed_optional_required": "computed"
+                                                    }
+                                                },
+                                                {
+                                                    "name": "major",
+                                                    "int64": {
+                                                        "computed_optional_required": "computed"
+                                                    }
+                                                },
+                                                {
+                                                    "name": "minor",
+                                                    "int64": {
+                                                        "computed_optional_required": "computed"
+                                                    }
+                                                },
+                                                {
+                                                    "name": "warning",
+                                                    "int64": {
+                                                        "computed_optional_required": "computed"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "api_version",
+                                        "string": {
+                                            "computed_optional_required": "computed"
+                                        }
+                                    },
+                                    {
+                                        "name": "deviations",
+                                        "single_nested": {
+                                            "computed_optional_required": "computed",
+                                            "attributes": [
+                                                {
+                                                    "name": "count",
+                                                    "int64": {
+                                                        "computed_optional_required": "computed"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "kind",
+                                        "string": {
+                                            "computed_optional_required": "computed"
+                                        }
+                                    },
+                                    {
+                                        "name": "metadata",
+                                        "single_nested": {
+                                            "computed_optional_required": "computed",
+                                            "attributes": [
+                                                {
+                                                    "name": "annotations",
+                                                    "map": {
+                                                        "computed_optional_required": "computed",
+                                                        "element_type": {
+                                                            "string": {}
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "name": "labels",
+                                                    "map": {
+                                                        "computed_optional_required": "computed",
+                                                        "element_type": {
+                                                            "string": {}
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "name": "name",
+                                                    "string": {
+                                                        "computed_optional_required": "computed"
+                                                    }
+                                                },
+                                                {
+                                                    "name": "namespace",
+                                                    "string": {
+                                                        "computed_optional_required": "computed"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "spec",
+                                        "single_nested": {
+                                            "computed_optional_required": "optional",
+                                            "attributes": [
+                                                {
+                                                    "name": "attributes",
+                                                    "map": {
+                                                        "computed_optional_required": "optional",
+                                                        "element_type": {
+                                                            "string": {}
+                                                        },
+                                                        "description": "A map of attributes associated with the Verb for this Actionable."
+                                                    }
+                                                },
+                                                {
+                                                    "name": "verb",
+                                                    "string": {
+                                                        "computed_optional_required": "optional",
+                                                        "description": "The keyword for the operation that should be executed by the Plugin (Eg. AuditRequested)."
+                                                    }
+                                                }
+                                            ],
+                                            "description": "ConnectPluginActionableSpec defines the desired state of ConnectPluginActionable"
+                                        }
+                                    },
+                                    {
+                                        "name": "status",
+                                        "single_nested": {
+                                            "computed_optional_required": "computed",
+                                            "description": "ConnectPluginActionableStatus defines the observed state of ConnectPluginActionable"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "kind",
+                        "string": {
+                            "computed_optional_required": "computed"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "connect_plugin_list",
+            "schema": {
+                "attributes": [
+                    {
+                        "name": "fields",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "description": "a comma-separated list of resource fields to fetch/return.  If unspecified, all fields are fetched.  If empty, only key-fields are fetched."
+                        }
+                    },
+                    {
+                        "name": "filter",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "description": "an EQL \"where\" expression that will be used to filter the set of resources returned."
+                        }
+                    },
+                    {
+                        "name": "label_selector",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "description": "A label selector string to filter the results based on resource labels. If specified multiple times, the union of resources which satisfy a label-selector will be returned."
+                        }
+                    },
+                    {
+                        "name": "labelselector",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "description": "Deprecated: a label selector string to filter the results based on CR labels"
+                        }
+                    },
+                    {
+                        "name": "namespace",
+                        "string": {
+                            "computed_optional_required": "required",
+                            "description": "the namespace scope in which to operate"
+                        }
+                    },
+                    {
+                        "name": "api_version",
+                        "string": {
+                            "computed_optional_required": "computed"
+                        }
+                    },
+                    {
+                        "name": "items",
+                        "list_nested": {
+                            "computed_optional_required": "computed",
+                            "nested_object": {
+                                "attributes": [
+                                    {
+                                        "name": "alarms",
+                                        "single_nested": {
+                                            "computed_optional_required": "computed",
+                                            "attributes": [
+                                                {
+                                                    "name": "critical",
+                                                    "int64": {
+                                                        "computed_optional_required": "computed"
+                                                    }
+                                                },
+                                                {
+                                                    "name": "major",
+                                                    "int64": {
+                                                        "computed_optional_required": "computed"
+                                                    }
+                                                },
+                                                {
+                                                    "name": "minor",
+                                                    "int64": {
+                                                        "computed_optional_required": "computed"
+                                                    }
+                                                },
+                                                {
+                                                    "name": "warning",
+                                                    "int64": {
+                                                        "computed_optional_required": "computed"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "api_version",
+                                        "string": {
+                                            "computed_optional_required": "computed"
+                                        }
+                                    },
+                                    {
+                                        "name": "deviations",
+                                        "single_nested": {
+                                            "computed_optional_required": "computed",
+                                            "attributes": [
+                                                {
+                                                    "name": "count",
+                                                    "int64": {
+                                                        "computed_optional_required": "computed"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "kind",
+                                        "string": {
+                                            "computed_optional_required": "computed"
+                                        }
+                                    },
+                                    {
+                                        "name": "metadata",
+                                        "single_nested": {
+                                            "computed_optional_required": "computed",
+                                            "attributes": [
+                                                {
+                                                    "name": "annotations",
+                                                    "map": {
+                                                        "computed_optional_required": "computed",
+                                                        "element_type": {
+                                                            "string": {}
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "name": "labels",
+                                                    "map": {
+                                                        "computed_optional_required": "computed",
+                                                        "element_type": {
+                                                            "string": {}
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "name": "name",
+                                                    "string": {
+                                                        "computed_optional_required": "computed"
+                                                    }
+                                                },
+                                                {
+                                                    "name": "namespace",
+                                                    "string": {
+                                                        "computed_optional_required": "computed"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "spec",
+                                        "single_nested": {
+                                            "computed_optional_required": "optional",
+                                            "attributes": [
+                                                {
+                                                    "name": "description",
+                                                    "string": {
+                                                        "computed_optional_required": "optional",
+                                                        "description": "A human-readable representation of the Plugin."
+                                                    }
+                                                },
+                                                {
+                                                    "name": "heartbeat_interval_seconds",
+                                                    "int64": {
+                                                        "computed_optional_required": "optional",
+                                                        "description": "The interval in seconds in which the Plugin will heartbeat.\nWhen the interval is 0, heartbeating will be disabled."
+                                                    }
+                                                },
+                                                {
+                                                    "name": "plugin_type",
+                                                    "string": {
+                                                        "computed_optional_required": "optional",
+                                                        "description": "Indicates the type of the Cloud Management System managed by this Plugin. Eg. VMware, OpenStack."
+                                                    }
+                                                },
+                                                {
+                                                    "name": "required_plugins",
+                                                    "list": {
+                                                        "computed_optional_required": "optional",
+                                                        "element_type": {
+                                                            "string": {}
+                                                        },
+                                                        "description": "A list of ConnectPlugins whose resources this ConnectPlugin will require, this signifies an explicit\nrelationship between this Plugin and the Required Plugins."
+                                                    }
+                                                },
+                                                {
+                                                    "name": "supported_actionables",
+                                                    "list": {
+                                                        "computed_optional_required": "optional",
+                                                        "element_type": {
+                                                            "string": {}
+                                                        },
+                                                        "description": "The list of Actionable identifiers that this Plugin supports."
+                                                    }
+                                                }
+                                            ],
+                                            "description": "ConnectPluginSpec defines the desired state of ConnectPlugin"
+                                        }
+                                    },
+                                    {
+                                        "name": "status",
+                                        "single_nested": {
+                                            "computed_optional_required": "computed",
+                                            "attributes": [
+                                                {
+                                                    "name": "stale",
+                                                    "bool": {
+                                                        "computed_optional_required": "computed",
+                                                        "description": "When a plugin registers with a certain heartbeatinterval and it does not meet that contract, Connect will assume\nthat the plugin is Stale / non-responsive. An alarm is raised when the plugin is Stale."
+                                                    }
+                                                }
+                                            ],
+                                            "description": "ConnectPluginStatus defines the observed state of ConnectPlugin"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "kind",
+                        "string": {
+                            "computed_optional_required": "computed"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "resource_list",
+            "schema": {
+                "attributes": [
+                    {
+                        "name": "api_version",
+                        "string": {
+                            "computed_optional_required": "computed"
+                        }
+                    },
+                    {
+                        "name": "group_version",
+                        "string": {
+                            "computed_optional_required": "computed"
+                        }
+                    },
+                    {
+                        "name": "kind",
+                        "string": {
+                            "computed_optional_required": "computed"
+                        }
+                    },
+                    {
+                        "name": "resources",
+                        "list_nested": {
+                            "computed_optional_required": "computed",
+                            "nested_object": {
+                                "attributes": [
+                                    {
+                                        "name": "kind",
+                                        "string": {
+                                            "computed_optional_required": "computed"
+                                        }
+                                    },
+                                    {
+                                        "name": "name",
+                                        "string": {
+                                            "computed_optional_required": "computed"
+                                        }
+                                    },
+                                    {
+                                        "name": "namespaced",
+                                        "bool": {
+                                            "computed_optional_required": "computed"
+                                        }
+                                    },
+                                    {
+                                        "name": "read_only",
+                                        "bool": {
+                                            "computed_optional_required": "computed"
+                                        }
+                                    },
+                                    {
+                                        "name": "singular_name",
+                                        "string": {
+                                            "computed_optional_required": "computed"
+                                        }
+                                    },
+                                    {
+                                        "name": "ui_category",
+                                        "string": {
+                                            "computed_optional_required": "computed"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "provider": {
+        "name": "connect"
+    },
+    "resources": [
+        {
+            "name": "connect_audit",
+            "schema": {
+                "attributes": [
+                    {
+                        "name": "alarms",
+                        "single_nested": {
+                            "computed_optional_required": "computed_optional",
+                            "attributes": [
+                                {
+                                    "name": "critical",
+                                    "int64": {
+                                        "computed_optional_required": "computed_optional"
+                                    }
+                                },
+                                {
+                                    "name": "major",
+                                    "int64": {
+                                        "computed_optional_required": "computed_optional"
+                                    }
+                                },
+                                {
+                                    "name": "minor",
+                                    "int64": {
+                                        "computed_optional_required": "computed_optional"
+                                    }
+                                },
+                                {
+                                    "name": "warning",
+                                    "int64": {
+                                        "computed_optional_required": "computed_optional"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "api_version",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "default": {
+                                "static": "connect.eda.nokia.com/v2"
+                            },
+                            "validators": [
+                                {
+                                    "custom": {
+                                        "imports": [
+                                            {
+                                                "path": "regexp"
+                                            },
+                                            {
+                                                "path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+                                            }
+                                        ],
+                                        "schema_definition": "stringvalidator.RegexMatches(regexp.MustCompile(\"^connect\\\\.eda\\\\.nokia\\\\.com/v2$\"), \"\")"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "deviations",
+                        "single_nested": {
+                            "computed_optional_required": "computed_optional",
+                            "attributes": [
+                                {
+                                    "name": "count",
+                                    "int64": {
+                                        "computed_optional_required": "computed_optional"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "kind",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "default": {
+                                "static": "ConnectAudit"
+                            },
+                            "validators": [
+                                {
+                                    "custom": {
+                                        "imports": [
+                                            {
+                                                "path": "regexp"
+                                            },
+                                            {
+                                                "path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+                                            }
+                                        ],
+                                        "schema_definition": "stringvalidator.RegexMatches(regexp.MustCompile(\"^ConnectAudit$\"), \"\")"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "metadata",
+                        "single_nested": {
+                            "computed_optional_required": "required",
+                            "attributes": [
+                                {
+                                    "name": "annotations",
+                                    "map": {
+                                        "computed_optional_required": "computed_optional",
+                                        "element_type": {
+                                            "string": {}
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "labels",
+                                    "map": {
+                                        "computed_optional_required": "computed_optional",
+                                        "element_type": {
+                                            "string": {}
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "name",
+                                    "string": {
+                                        "computed_optional_required": "required",
+                                        "validators": [
+                                            {
+                                                "custom": {
+                                                    "imports": [
+                                                        {
+                                                            "path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+                                                        }
+                                                    ],
+                                                    "schema_definition": "stringvalidator.LengthAtMost(253)"
+                                                }
+                                            },
+                                            {
+                                                "custom": {
+                                                    "imports": [
+                                                        {
+                                                            "path": "regexp"
+                                                        },
+                                                        {
+                                                            "path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+                                                        }
+                                                    ],
+                                                    "schema_definition": "stringvalidator.RegexMatches(regexp.MustCompile(\"^[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*$\"), \"\")"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "namespace",
+                                    "string": {
+                                        "computed_optional_required": "required"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "spec",
+                        "single_nested": {
+                            "computed_optional_required": "required",
+                            "attributes": [
+                                {
+                                    "name": "connect_plugin_name",
+                                    "string": {
+                                        "computed_optional_required": "required",
+                                        "description": "ConnectPluginName refers to the ConnectPlugin being audited."
+                                    }
+                                },
+                                {
+                                    "name": "finished",
+                                    "bool": {
+                                        "computed_optional_required": "required",
+                                        "description": "Finished indicates whether the ConnectAudit is done running."
+                                    }
+                                },
+                                {
+                                    "name": "scope",
+                                    "string": {
+                                        "computed_optional_required": "required",
+                                        "description": "Scope indicates the scope of the ConnectAudit.\nCurrently supported scopes: Plugin.",
+                                        "validators": [
+                                            {
+                                                "custom": {
+                                                    "imports": [
+                                                        {
+                                                            "path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+                                                        }
+                                                    ],
+                                                    "schema_definition": "stringvalidator.OneOf(\n\"Plugin\",\n)"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ],
+                            "description": "ConnectAuditSpec defines the desired state of ConnectAudit"
+                        }
+                    },
+                    {
+                        "name": "status",
+                        "single_nested": {
+                            "computed_optional_required": "computed_optional",
+                            "attributes": [
+                                {
+                                    "name": "end_time",
+                                    "string": {
+                                        "computed_optional_required": "computed_optional",
+                                        "description": "EndTime is when the ConnectAudit reaches a completed State."
+                                    }
+                                },
+                                {
+                                    "name": "enqueue_time",
+                                    "string": {
+                                        "computed_optional_required": "computed_optional",
+                                        "description": "EnqueueTime is the starting time of the ConnectAudit."
+                                    }
+                                },
+                                {
+                                    "name": "failure_reason",
+                                    "string": {
+                                        "computed_optional_required": "computed_optional",
+                                        "description": "FailureReason indicates the reason for a Failure Outcome."
+                                    }
+                                },
+                                {
+                                    "name": "outcome",
+                                    "string": {
+                                        "computed_optional_required": "computed_optional",
+                                        "description": "Outcome indicates the outcome of the ConnectAudit once it is Finished.\nPossible values are Success|Failure."
+                                    }
+                                },
+                                {
+                                    "name": "results",
+                                    "list_nested": {
+                                        "computed_optional_required": "computed_optional",
+                                        "nested_object": {
+                                            "attributes": [
+                                                {
+                                                    "name": "audit_type",
+                                                    "string": {
+                                                        "computed_optional_required": "computed_optional",
+                                                        "description": "AuditType is the type of this Result.\nPossible values are ConnectPluginAudit"
+                                                    }
+                                                },
+                                                {
+                                                    "name": "failure_reason",
+                                                    "string": {
+                                                        "computed_optional_required": "computed_optional",
+                                                        "description": "FailureReason indicates the reason for a Failure Outcome."
+                                                    }
+                                                },
+                                                {
+                                                    "name": "found_discrepancies",
+                                                    "list_nested": {
+                                                        "computed_optional_required": "computed_optional",
+                                                        "nested_object": {
+                                                            "attributes": [
+                                                                {
+                                                                    "name": "connect_resource_kind",
+                                                                    "string": {
+                                                                        "computed_optional_required": "computed_optional",
+                                                                        "description": "The Kind of the resource in Connect."
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "name": "connect_resource_name",
+                                                                    "string": {
+                                                                        "computed_optional_required": "computed_optional",
+                                                                        "description": "The (EDA) name of the resource in Connect."
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "name": "failure_reason",
+                                                                    "string": {
+                                                                        "computed_optional_required": "computed_optional",
+                                                                        "description": "The reason for a Failure Outcome."
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "name": "outcome",
+                                                                    "string": {
+                                                                        "computed_optional_required": "computed_optional",
+                                                                        "description": "The outcome of this Discrepancy.\nPossible values are Success|Failure"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "name": "plugin_resource_kind",
+                                                                    "string": {
+                                                                        "computed_optional_required": "computed_optional",
+                                                                        "description": "The Kind of the resource in the Plugin environment."
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "name": "plugin_resource_uri",
+                                                                    "string": {
+                                                                        "computed_optional_required": "computed_optional",
+                                                                        "description": "The URI of the resource in the Plugin environment."
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "name": "type",
+                                                                    "string": {
+                                                                        "computed_optional_required": "required",
+                                                                        "description": "Type of discrepancy found during the Audit."
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        "description": "FoundDiscrepancies is a list of found and or corrected discrepancies."
+                                                    }
+                                                },
+                                                {
+                                                    "name": "outcome",
+                                                    "string": {
+                                                        "computed_optional_required": "computed_optional",
+                                                        "description": "Outcome indicates the outcome of this Result once it is Finished.\nPossible values are Success|Failure"
+                                                    }
+                                                },
+                                                {
+                                                    "name": "state",
+                                                    "string": {
+                                                        "computed_optional_required": "computed_optional",
+                                                        "description": "State indicates the state of this Result.\nPossible values are Scheduled|Finished|InProgress"
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        "description": "Results is a list of Audit substeps performed."
+                                    }
+                                },
+                                {
+                                    "name": "state",
+                                    "string": {
+                                        "computed_optional_required": "computed_optional",
+                                        "description": "State indicates the state of the overall ConnectAudit.\nPossible values are Scheduled|Finished|InProgress."
+                                    }
+                                },
+                                {
+                                    "name": "total_number_of_discrepancies",
+                                    "int64": {
+                                        "computed_optional_required": "computed_optional",
+                                        "description": "TotalNumberOfDiscrepancies indicates the amount of entries in the Audit Report."
+                                    }
+                                },
+                                {
+                                    "name": "total_number_of_failed_discrepancies",
+                                    "int64": {
+                                        "computed_optional_required": "computed_optional",
+                                        "description": "TotalNumberOfFailedDiscrepancies indicates the amount of entries in the Results that have failed\nto be resolved. Manual action is required here."
+                                    }
+                                },
+                                {
+                                    "name": "total_number_of_successful_discrepancies",
+                                    "int64": {
+                                        "computed_optional_required": "computed_optional",
+                                        "description": "TotalNumberOfSuccessfulDiscrepancies indicates the amount of entries in the Audit Report that have successfully\nbeen resolved."
+                                    }
+                                }
+                            ],
+                            "description": "ConnectAuditStatus defines the observed state of ConnectAudit"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "description": "name of the ConnectAudit"
+                        }
+                    },
+                    {
+                        "name": "namespace",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "description": "the namespace scope in which to operate"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "connect_interface",
+            "schema": {
+                "attributes": [
+                    {
+                        "name": "alarms",
+                        "single_nested": {
+                            "computed_optional_required": "computed_optional",
+                            "attributes": [
+                                {
+                                    "name": "critical",
+                                    "int64": {
+                                        "computed_optional_required": "computed_optional"
+                                    }
+                                },
+                                {
+                                    "name": "major",
+                                    "int64": {
+                                        "computed_optional_required": "computed_optional"
+                                    }
+                                },
+                                {
+                                    "name": "minor",
+                                    "int64": {
+                                        "computed_optional_required": "computed_optional"
+                                    }
+                                },
+                                {
+                                    "name": "warning",
+                                    "int64": {
+                                        "computed_optional_required": "computed_optional"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "api_version",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "default": {
+                                "static": "connect.eda.nokia.com/v2"
+                            },
+                            "validators": [
+                                {
+                                    "custom": {
+                                        "imports": [
+                                            {
+                                                "path": "regexp"
+                                            },
+                                            {
+                                                "path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+                                            }
+                                        ],
+                                        "schema_definition": "stringvalidator.RegexMatches(regexp.MustCompile(\"^connect\\\\.eda\\\\.nokia\\\\.com/v2$\"), \"\")"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "deviations",
+                        "single_nested": {
+                            "computed_optional_required": "computed_optional",
+                            "attributes": [
+                                {
+                                    "name": "count",
+                                    "int64": {
+                                        "computed_optional_required": "computed_optional"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "kind",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "default": {
+                                "static": "ConnectInterface"
+                            },
+                            "validators": [
+                                {
+                                    "custom": {
+                                        "imports": [
+                                            {
+                                                "path": "regexp"
+                                            },
+                                            {
+                                                "path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+                                            }
+                                        ],
+                                        "schema_definition": "stringvalidator.RegexMatches(regexp.MustCompile(\"^ConnectInterface$\"), \"\")"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "metadata",
+                        "single_nested": {
+                            "computed_optional_required": "required",
+                            "attributes": [
+                                {
+                                    "name": "annotations",
+                                    "map": {
+                                        "computed_optional_required": "computed_optional",
+                                        "element_type": {
+                                            "string": {}
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "labels",
+                                    "map": {
+                                        "computed_optional_required": "computed_optional",
+                                        "element_type": {
+                                            "string": {}
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "name",
+                                    "string": {
+                                        "computed_optional_required": "required",
+                                        "validators": [
+                                            {
+                                                "custom": {
+                                                    "imports": [
+                                                        {
+                                                            "path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+                                                        }
+                                                    ],
+                                                    "schema_definition": "stringvalidator.LengthAtMost(253)"
+                                                }
+                                            },
+                                            {
+                                                "custom": {
+                                                    "imports": [
+                                                        {
+                                                            "path": "regexp"
+                                                        },
+                                                        {
+                                                            "path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+                                                        }
+                                                    ],
+                                                    "schema_definition": "stringvalidator.RegexMatches(regexp.MustCompile(\"^[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*$\"), \"\")"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "namespace",
+                                    "string": {
+                                        "computed_optional_required": "required"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "spec",
+                        "single_nested": {
+                            "computed_optional_required": "required",
+                            "attributes": [
+                                {
+                                    "name": "bond",
+                                    "single_nested": {
+                                        "computed_optional_required": "optional",
+                                        "attributes": [
+                                            {
+                                                "name": "chassis_id",
+                                                "string": {
+                                                    "computed_optional_required": "optional",
+                                                    "description": "The Chassis ID of the top-of-rack switch to which this compute interface is connected, received through LLDP."
+                                                }
+                                            },
+                                            {
+                                                "name": "host_name",
+                                                "string": {
+                                                    "computed_optional_required": "required",
+                                                    "description": "The FQDN of the host this compute port belongs to (eg. compute01.example.com)."
+                                                }
+                                            },
+                                            {
+                                                "name": "interface_name",
+                                                "string": {
+                                                    "computed_optional_required": "required",
+                                                    "description": "The logical interface name of the compute port (eg. eth0)."
+                                                }
+                                            },
+                                            {
+                                                "name": "port_id",
+                                                "string": {
+                                                    "computed_optional_required": "optional",
+                                                    "description": "The Port ID of the top-of-rack switch to which this compute interface is connected, received through LLDP."
+                                                }
+                                            },
+                                            {
+                                                "name": "system_name",
+                                                "string": {
+                                                    "computed_optional_required": "optional",
+                                                    "description": "The System name of the top-of-rack switch to which this compute interface is connected, received through LLDP."
+                                                }
+                                            }
+                                        ],
+                                        "description": "An Optional Bond definition, indicating the naming of a Bond on the Compute."
+                                    }
+                                },
+                                {
+                                    "name": "members",
+                                    "list_nested": {
+                                        "computed_optional_required": "required",
+                                        "nested_object": {
+                                            "attributes": [
+                                                {
+                                                    "name": "chassis_id",
+                                                    "string": {
+                                                        "computed_optional_required": "optional",
+                                                        "description": "The Chassis ID of the top-of-rack switch to which this compute interface is connected, received through LLDP."
+                                                    }
+                                                },
+                                                {
+                                                    "name": "host_name",
+                                                    "string": {
+                                                        "computed_optional_required": "required",
+                                                        "description": "The FQDN of the host this compute port belongs to (eg. compute01.example.com)."
+                                                    }
+                                                },
+                                                {
+                                                    "name": "interface_name",
+                                                    "string": {
+                                                        "computed_optional_required": "required",
+                                                        "description": "The logical interface name of the compute port (eg. eth0)."
+                                                    }
+                                                },
+                                                {
+                                                    "name": "port_id",
+                                                    "string": {
+                                                        "computed_optional_required": "optional",
+                                                        "description": "The Port ID of the top-of-rack switch to which this compute interface is connected, received through LLDP."
+                                                    }
+                                                },
+                                                {
+                                                    "name": "system_name",
+                                                    "string": {
+                                                        "computed_optional_required": "optional",
+                                                        "description": "The System name of the top-of-rack switch to which this compute interface is connected, received through LLDP."
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        "description": "A list of InterfaceMembers indicating which Compute Interfaces are part of this ConnectInterface.\nFor non-LAG interfaces, this is a list of one element."
+                                    }
+                                }
+                            ],
+                            "description": "ConnectInterfaceSpec defines the desired state of ConnectInterface"
+                        }
+                    },
+                    {
+                        "name": "status",
+                        "single_nested": {
+                            "computed_optional_required": "computed_optional",
+                            "attributes": [
+                                {
+                                    "name": "current_interface",
+                                    "string": {
+                                        "computed_optional_required": "computed_optional",
+                                        "description": "Indicates the current EDA CachedInterface this ConnectInterface is connected to."
+                                    }
+                                },
+                                {
+                                    "name": "operational_status",
+                                    "string": {
+                                        "computed_optional_required": "computed_optional",
+                                        "description": "Indicates the current operational state of the ConnectInterface.",
+                                        "validators": [
+                                            {
+                                                "custom": {
+                                                    "imports": [
+                                                        {
+                                                            "path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+                                                        }
+                                                    ],
+                                                    "schema_definition": "stringvalidator.OneOf(\n\"Connected\",\n\"Disconnected\",\n)"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ],
+                            "description": "ConnectInterfaceStatus defines the observed state of ConnectInterface"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "description": "name of the ConnectInterface"
+                        }
+                    },
+                    {
+                        "name": "namespace",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "description": "the namespace scope in which to operate"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "connect_plugin",
+            "schema": {
+                "attributes": [
+                    {
+                        "name": "alarms",
+                        "single_nested": {
+                            "computed_optional_required": "computed_optional",
+                            "attributes": [
+                                {
+                                    "name": "critical",
+                                    "int64": {
+                                        "computed_optional_required": "computed_optional"
+                                    }
+                                },
+                                {
+                                    "name": "major",
+                                    "int64": {
+                                        "computed_optional_required": "computed_optional"
+                                    }
+                                },
+                                {
+                                    "name": "minor",
+                                    "int64": {
+                                        "computed_optional_required": "computed_optional"
+                                    }
+                                },
+                                {
+                                    "name": "warning",
+                                    "int64": {
+                                        "computed_optional_required": "computed_optional"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "api_version",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "default": {
+                                "static": "connect.eda.nokia.com/v2"
+                            },
+                            "validators": [
+                                {
+                                    "custom": {
+                                        "imports": [
+                                            {
+                                                "path": "regexp"
+                                            },
+                                            {
+                                                "path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+                                            }
+                                        ],
+                                        "schema_definition": "stringvalidator.RegexMatches(regexp.MustCompile(\"^connect\\\\.eda\\\\.nokia\\\\.com/v2$\"), \"\")"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "deviations",
+                        "single_nested": {
+                            "computed_optional_required": "computed_optional",
+                            "attributes": [
+                                {
+                                    "name": "count",
+                                    "int64": {
+                                        "computed_optional_required": "computed_optional"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "kind",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "default": {
+                                "static": "ConnectPlugin"
+                            },
+                            "validators": [
+                                {
+                                    "custom": {
+                                        "imports": [
+                                            {
+                                                "path": "regexp"
+                                            },
+                                            {
+                                                "path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+                                            }
+                                        ],
+                                        "schema_definition": "stringvalidator.RegexMatches(regexp.MustCompile(\"^ConnectPlugin$\"), \"\")"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "metadata",
+                        "single_nested": {
+                            "computed_optional_required": "required",
+                            "attributes": [
+                                {
+                                    "name": "annotations",
+                                    "map": {
+                                        "computed_optional_required": "computed_optional",
+                                        "element_type": {
+                                            "string": {}
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "labels",
+                                    "map": {
+                                        "computed_optional_required": "computed_optional",
+                                        "element_type": {
+                                            "string": {}
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "name",
+                                    "string": {
+                                        "computed_optional_required": "required",
+                                        "validators": [
+                                            {
+                                                "custom": {
+                                                    "imports": [
+                                                        {
+                                                            "path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+                                                        }
+                                                    ],
+                                                    "schema_definition": "stringvalidator.LengthAtMost(253)"
+                                                }
+                                            },
+                                            {
+                                                "custom": {
+                                                    "imports": [
+                                                        {
+                                                            "path": "regexp"
+                                                        },
+                                                        {
+                                                            "path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+                                                        }
+                                                    ],
+                                                    "schema_definition": "stringvalidator.RegexMatches(regexp.MustCompile(\"^[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*$\"), \"\")"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "namespace",
+                                    "string": {
+                                        "computed_optional_required": "required"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "spec",
+                        "single_nested": {
+                            "computed_optional_required": "required",
+                            "attributes": [
+                                {
+                                    "name": "description",
+                                    "string": {
+                                        "computed_optional_required": "required",
+                                        "description": "A human-readable representation of the Plugin."
+                                    }
+                                },
+                                {
+                                    "name": "heartbeat_interval_seconds",
+                                    "int64": {
+                                        "computed_optional_required": "optional",
+                                        "description": "The interval in seconds in which the Plugin will heartbeat.\nWhen the interval is 0, heartbeating will be disabled."
+                                    }
+                                },
+                                {
+                                    "name": "plugin_type",
+                                    "string": {
+                                        "computed_optional_required": "required",
+                                        "description": "Indicates the type of the Cloud Management System managed by this Plugin. Eg. VMware, OpenStack."
+                                    }
+                                },
+                                {
+                                    "name": "required_plugins",
+                                    "list": {
+                                        "computed_optional_required": "optional",
+                                        "element_type": {
+                                            "string": {}
+                                        },
+                                        "description": "A list of ConnectPlugins whose resources this ConnectPlugin will require, this signifies an explicit\nrelationship between this Plugin and the Required Plugins."
+                                    }
+                                },
+                                {
+                                    "name": "supported_actionables",
+                                    "list": {
+                                        "computed_optional_required": "optional",
+                                        "element_type": {
+                                            "string": {}
+                                        },
+                                        "description": "The list of Actionable identifiers that this Plugin supports."
+                                    }
+                                }
+                            ],
+                            "description": "ConnectPluginSpec defines the desired state of ConnectPlugin"
+                        }
+                    },
+                    {
+                        "name": "status",
+                        "single_nested": {
+                            "computed_optional_required": "computed_optional",
+                            "attributes": [
+                                {
+                                    "name": "stale",
+                                    "bool": {
+                                        "computed_optional_required": "required",
+                                        "description": "When a plugin registers with a certain heartbeatinterval and it does not meet that contract, Connect will assume\nthat the plugin is Stale / non-responsive. An alarm is raised when the plugin is Stale."
+                                    }
+                                }
+                            ],
+                            "description": "ConnectPluginStatus defines the observed state of ConnectPlugin"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "description": "name of the ConnectPlugin"
+                        }
+                    },
+                    {
+                        "name": "namespace",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "description": "the namespace scope in which to operate"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "connect_plugin_actionable",
+            "schema": {
+                "attributes": [
+                    {
+                        "name": "alarms",
+                        "single_nested": {
+                            "computed_optional_required": "computed_optional",
+                            "attributes": [
+                                {
+                                    "name": "critical",
+                                    "int64": {
+                                        "computed_optional_required": "computed_optional"
+                                    }
+                                },
+                                {
+                                    "name": "major",
+                                    "int64": {
+                                        "computed_optional_required": "computed_optional"
+                                    }
+                                },
+                                {
+                                    "name": "minor",
+                                    "int64": {
+                                        "computed_optional_required": "computed_optional"
+                                    }
+                                },
+                                {
+                                    "name": "warning",
+                                    "int64": {
+                                        "computed_optional_required": "computed_optional"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "api_version",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "default": {
+                                "static": "connect.eda.nokia.com/v2"
+                            },
+                            "validators": [
+                                {
+                                    "custom": {
+                                        "imports": [
+                                            {
+                                                "path": "regexp"
+                                            },
+                                            {
+                                                "path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+                                            }
+                                        ],
+                                        "schema_definition": "stringvalidator.RegexMatches(regexp.MustCompile(\"^connect\\\\.eda\\\\.nokia\\\\.com/v2$\"), \"\")"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "deviations",
+                        "single_nested": {
+                            "computed_optional_required": "computed_optional",
+                            "attributes": [
+                                {
+                                    "name": "count",
+                                    "int64": {
+                                        "computed_optional_required": "computed_optional"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "kind",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "default": {
+                                "static": "ConnectPluginActionable"
+                            },
+                            "validators": [
+                                {
+                                    "custom": {
+                                        "imports": [
+                                            {
+                                                "path": "regexp"
+                                            },
+                                            {
+                                                "path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+                                            }
+                                        ],
+                                        "schema_definition": "stringvalidator.RegexMatches(regexp.MustCompile(\"^ConnectPluginActionable$\"), \"\")"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "metadata",
+                        "single_nested": {
+                            "computed_optional_required": "required",
+                            "attributes": [
+                                {
+                                    "name": "annotations",
+                                    "map": {
+                                        "computed_optional_required": "computed_optional",
+                                        "element_type": {
+                                            "string": {}
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "labels",
+                                    "map": {
+                                        "computed_optional_required": "computed_optional",
+                                        "element_type": {
+                                            "string": {}
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "name",
+                                    "string": {
+                                        "computed_optional_required": "required",
+                                        "validators": [
+                                            {
+                                                "custom": {
+                                                    "imports": [
+                                                        {
+                                                            "path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+                                                        }
+                                                    ],
+                                                    "schema_definition": "stringvalidator.LengthAtMost(253)"
+                                                }
+                                            },
+                                            {
+                                                "custom": {
+                                                    "imports": [
+                                                        {
+                                                            "path": "regexp"
+                                                        },
+                                                        {
+                                                            "path": "github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
+                                                        }
+                                                    ],
+                                                    "schema_definition": "stringvalidator.RegexMatches(regexp.MustCompile(\"^[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*$\"), \"\")"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "namespace",
+                                    "string": {
+                                        "computed_optional_required": "required"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "spec",
+                        "single_nested": {
+                            "computed_optional_required": "required",
+                            "attributes": [
+                                {
+                                    "name": "attributes",
+                                    "map": {
+                                        "computed_optional_required": "optional",
+                                        "element_type": {
+                                            "string": {}
+                                        },
+                                        "description": "A map of attributes associated with the Verb for this Actionable."
+                                    }
+                                },
+                                {
+                                    "name": "verb",
+                                    "string": {
+                                        "computed_optional_required": "required",
+                                        "description": "The keyword for the operation that should be executed by the Plugin (Eg. AuditRequested)."
+                                    }
+                                }
+                            ],
+                            "description": "ConnectPluginActionableSpec defines the desired state of ConnectPluginActionable"
+                        }
+                    },
+                    {
+                        "name": "status",
+                        "single_nested": {
+                            "computed_optional_required": "computed_optional",
+                            "description": "ConnectPluginActionableStatus defines the observed state of ConnectPluginActionable"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "description": "name of the ConnectPluginActionable"
+                        }
+                    },
+                    {
+                        "name": "namespace",
+                        "string": {
+                            "computed_optional_required": "computed_optional",
+                            "description": "the namespace scope in which to operate"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "version": "0.1"
+}

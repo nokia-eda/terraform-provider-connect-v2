@@ -1,0 +1,110 @@
+provider:
+  name: connect
+
+data_sources:
+  app_group:
+    read:
+      path: /apps/connect.eda.nokia.com
+      method: GET
+
+  connect_audit:
+    read:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectaudits/{name}
+      method: GET
+
+  connect_audit_list:
+    read:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectaudits
+      method: GET
+
+  connect_interface:
+    read:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectinterfaces/{name}
+      method: GET
+
+  connect_interface_list:
+    read:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectinterfaces
+      method: GET
+
+  connect_plugin:
+    read:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectplugins/{name}
+      method: GET
+
+  connect_plugin_actionable:
+    read:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectpluginactionables/{name}
+      method: GET
+
+  connect_plugin_actionable_list:
+    read:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectpluginactionables
+      method: GET
+
+  connect_plugin_list:
+    read:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectplugins
+      method: GET
+
+  resource_list:
+    read:
+      path: /apps/connect.eda.nokia.com/v2
+      method: GET
+
+resources:
+  connect_audit:
+    create:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectaudits
+      method: POST
+    read:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectaudits/{name}
+      method: GET
+    update:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectaudits/{name}
+      method: PUT
+    delete:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectaudits/{name}
+      method: DELETE
+
+  connect_interface:
+    create:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectinterfaces
+      method: POST
+    read:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectinterfaces/{name}
+      method: GET
+    update:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectinterfaces/{name}
+      method: PUT
+    delete:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectinterfaces/{name}
+      method: DELETE
+
+  connect_plugin:
+    create:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectplugins
+      method: POST
+    read:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectplugins/{name}
+      method: GET
+    update:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectplugins/{name}
+      method: PUT
+    delete:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectplugins/{name}
+      method: DELETE
+
+  connect_plugin_actionable:
+    create:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectpluginactionables
+      method: POST
+    read:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectpluginactionables/{name}
+      method: GET
+    update:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectpluginactionables/{name}
+      method: PUT
+    delete:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectpluginactionables/{name}
+      method: DELETE

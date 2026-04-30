@@ -1,0 +1,250 @@
+app_group:
+  - read:
+      path: /apps/connect.eda.nokia.com
+      method: GET
+
+intent_targets:
+  - read:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectaudits/{name}/_targets
+      method: GET
+  - read:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectinterfaces/{name}/_targets
+      method: GET
+  - read:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectpluginactionables/{name}/_targets
+      method: GET
+  - read:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectplugins/{name}/_targets
+      method: GET
+
+k8_s_topology_request:
+  - create:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectaudits/{name}/_topology
+      method: POST
+  - create:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectinterfaces/{name}/_topology
+      method: POST
+  - create:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectpluginactionables/{name}/_topology
+      method: POST
+  - create:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectplugins/{name}/_topology
+      method: POST
+
+resource_history:
+  - read:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectaudits/{name}/_revs
+      method: GET
+  - read:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectinterfaces/{name}/_revs
+      method: GET
+  - read:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectpluginactionables/{name}/_revs
+      method: GET
+  - read:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectplugins/{name}/_revs
+      method: GET
+
+resource_list:
+  - read:
+      path: /apps/connect.eda.nokia.com/v2
+      method: GET
+
+status:
+  - delete:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectaudits/{name}
+      method: DELETE
+  - delete:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectinterfaces/{name}
+      method: DELETE
+  - delete:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectpluginactionables/{name}
+      method: DELETE
+  - delete:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectplugins/{name}
+      method: DELETE
+
+ui_result:
+  - read:
+      path: /apps/connect.eda.nokia.com/v2/_ui/{pathname}
+      method: GET
+
+com.nokia.eda.connect.v2.connect_audit:
+  - create:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectaudits
+      method: POST
+  - read:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectaudits/{name}
+      method: GET
+  - update:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectaudits/{name}
+      method: PUT
+  - update:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectaudits/{name}
+      method: PATCH
+
+com.nokia.eda.connect.v2.connect_audit_list:
+  - read:
+      path: /apps/connect.eda.nokia.com/v2/connectaudits
+      method: GET
+  - read:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectaudits
+      method: GET
+  - delete:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectaudits
+      method: DELETE
+
+com.nokia.eda.connect.v2.connect_audit_deleted_resources:
+  - read:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectaudits/_deleted
+      method: GET
+
+com.nokia.eda.connect.v2.connect_interface:
+  - create:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectinterfaces
+      method: POST
+  - read:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectinterfaces/{name}
+      method: GET
+  - update:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectinterfaces/{name}
+      method: PUT
+  - update:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectinterfaces/{name}
+      method: PATCH
+
+com.nokia.eda.connect.v2.connect_interface_list:
+  - read:
+      path: /apps/connect.eda.nokia.com/v2/connectinterfaces
+      method: GET
+  - read:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectinterfaces
+      method: GET
+  - delete:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectinterfaces
+      method: DELETE
+
+com.nokia.eda.connect.v2.connect_interface_deleted_resources:
+  - read:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectinterfaces/_deleted
+      method: GET
+
+com.nokia.eda.connect.v2.connect_plugin:
+  - create:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectplugins
+      method: POST
+  - read:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectplugins/{name}
+      method: GET
+  - update:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectplugins/{name}
+      method: PUT
+  - update:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectplugins/{name}
+      method: PATCH
+
+com.nokia.eda.connect.v2.connect_plugin_actionable:
+  - create:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectpluginactionables
+      method: POST
+  - read:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectpluginactionables/{name}
+      method: GET
+  - update:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectpluginactionables/{name}
+      method: PUT
+  - update:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectpluginactionables/{name}
+      method: PATCH
+
+com.nokia.eda.connect.v2.connect_plugin_actionable_list:
+  - read:
+      path: /apps/connect.eda.nokia.com/v2/connectpluginactionables
+      method: GET
+  - read:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectpluginactionables
+      method: GET
+  - delete:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectpluginactionables
+      method: DELETE
+
+com.nokia.eda.connect.v2.connect_plugin_actionable_deleted_resources:
+  - read:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectpluginactionables/_deleted
+      method: GET
+
+com.nokia.eda.connect.v2.connect_plugin_list:
+  - read:
+      path: /apps/connect.eda.nokia.com/v2/connectplugins
+      method: GET
+  - read:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectplugins
+      method: GET
+  - delete:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectplugins
+      method: DELETE
+
+com.nokia.eda.connect.v2.connect_plugin_deleted_resources:
+  - read:
+      path: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectplugins/_deleted
+      method: GET
+
+totalPaths: 31
+totalSchemas: 73
+usedSchemas: 19
+unusedSchemas: 54
+unusedSchemaList:
+  - AppGroupVersion
+  - ErrorResponse
+  - IntentTarget
+  - K8SPatchOp
+  - OverlayState
+  - Patch
+  - Resource
+  - ResourceHistoryEntry
+  - ResourceTopology
+  - StatusDetails
+  - TopoAttrMetadata
+  - TopoAttribute
+  - TopoBoolExpression
+  - TopoBoolLiteral
+  - TopoElemMetadata
+  - TopoEndpointBoolExpression
+  - TopoField
+  - TopoFixedBoolExpression
+  - TopoLabelSelector
+  - TopoLiteralStatusOrBadge
+  - TopoLiteralValue
+  - TopoLogicalExpression
+  - TopoNodeGrouping
+  - TopoOverlayEndpoint
+  - TopoOverlayEndpointState
+  - TopoOverlayLink
+  - TopoOverlayLinkGroup
+  - TopoOverlayLinkGroupEndpoint
+  - TopoOverlayLinkState
+  - TopoOverlayNode
+  - TopoOverlayNodeOrGroup
+  - TopoOverlayNodeState
+  - TopoOverlayValue
+  - TopoSchema
+  - TopoStateFilter
+  - TopoValue
+  - TopoValueExpression
+  - Topology
+  - com.nokia.eda.connect.v2.ConnectAudit_DeletedResourceEntry
+  - com.nokia.eda.connect.v2.ConnectAudit_alarms
+  - com.nokia.eda.connect.v2.ConnectAudit_deviations
+  - com.nokia.eda.connect.v2.ConnectAudit_metadata
+  - com.nokia.eda.connect.v2.ConnectInterface_DeletedResourceEntry
+  - com.nokia.eda.connect.v2.ConnectInterface_alarms
+  - com.nokia.eda.connect.v2.ConnectInterface_deviations
+  - com.nokia.eda.connect.v2.ConnectInterface_metadata
+  - com.nokia.eda.connect.v2.ConnectPluginActionable_DeletedResourceEntry
+  - com.nokia.eda.connect.v2.ConnectPluginActionable_alarms
+  - com.nokia.eda.connect.v2.ConnectPluginActionable_deviations
+  - com.nokia.eda.connect.v2.ConnectPluginActionable_metadata
+  - com.nokia.eda.connect.v2.ConnectPlugin_DeletedResourceEntry
+  - com.nokia.eda.connect.v2.ConnectPlugin_alarms
+  - com.nokia.eda.connect.v2.ConnectPlugin_deviations
+  - com.nokia.eda.connect.v2.ConnectPlugin_metadata
