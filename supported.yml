@@ -1,0 +1,63 @@
+datasources:
+  - model_name: app_group
+    oas_endpoint: /apps/connect.eda.nokia.com
+    oas_schema: AppGroup
+  - model_name: resource_list
+    oas_endpoint: /apps/connect.eda.nokia.com/v2
+    oas_schema: ResourceList
+  - model_name: connect_audit_list
+    oas_endpoint: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectaudits
+    oas_schema: com.nokia.eda.connect.v2.ConnectAuditList
+  - model_name: connect_audit
+    oas_endpoint: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectaudits/{name}
+    oas_schema: com.nokia.eda.connect.v2.ConnectAudit
+  - model_name: connect_interface_list
+    oas_endpoint: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectinterfaces
+    oas_schema: com.nokia.eda.connect.v2.ConnectInterfaceList
+  - model_name: connect_interface
+    oas_endpoint: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectinterfaces/{name}
+    oas_schema: com.nokia.eda.connect.v2.ConnectInterface
+  - model_name: connect_plugin_actionable_list
+    oas_endpoint: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectpluginactionables
+    oas_schema: com.nokia.eda.connect.v2.ConnectPluginActionableList
+  - model_name: connect_plugin_actionable
+    oas_endpoint: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectpluginactionables/{name}
+    oas_schema: com.nokia.eda.connect.v2.ConnectPluginActionable
+  - model_name: connect_plugin_list
+    oas_endpoint: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectplugins
+    oas_schema: com.nokia.eda.connect.v2.ConnectPluginList
+  - model_name: connect_plugin
+    oas_endpoint: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectplugins/{name}
+    oas_schema: com.nokia.eda.connect.v2.ConnectPlugin
+
+resources:
+  - model_name: connect_audit
+    oas_endpoint: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectaudits
+    oas_schema: com.nokia.eda.connect.v2.ConnectAudit
+  - model_name: connect_interface
+    oas_endpoint: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectinterfaces
+    oas_schema: com.nokia.eda.connect.v2.ConnectInterface
+  - model_name: connect_plugin_actionable
+    oas_endpoint: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectpluginactionables
+    oas_schema: com.nokia.eda.connect.v2.ConnectPluginActionable
+  - model_name: connect_plugin
+    oas_endpoint: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectplugins
+    oas_schema: com.nokia.eda.connect.v2.ConnectPlugin
+
+qualified:
+  datasources:
+    - oas_schema: IntentTargets
+      get: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectaudits/{name}/_targets
+    - oas_schema: ResourceHistory
+      get: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectaudits/{name}/_revs
+    - oas_schema: UIResult
+      get: /apps/connect.eda.nokia.com/v2/_ui/{pathname}
+    - oas_schema: com.nokia.eda.connect.v2.ConnectAudit_DeletedResources
+      get: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectaudits/_deleted
+    - oas_schema: com.nokia.eda.connect.v2.ConnectInterface_DeletedResources
+      get: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectinterfaces/_deleted
+    - oas_schema: com.nokia.eda.connect.v2.ConnectPluginActionable_DeletedResources
+      get: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectpluginactionables/_deleted
+    - oas_schema: com.nokia.eda.connect.v2.ConnectPlugin_DeletedResources
+      get: /apps/connect.eda.nokia.com/v2/namespaces/{namespace}/connectplugins/_deleted
+  resources:
