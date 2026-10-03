@@ -23,7 +23,6 @@ description: |-
 ### Optional
 
 - `hash` (String) resource content will be returned as it was at the time of this git hash
-- `spec` (Attributes) ConnectInterfaceSpec defines the desired state of ConnectInterface (see [below for nested schema](#nestedatt--spec))
 
 ### Read-Only
 
@@ -32,41 +31,8 @@ description: |-
 - `deviations` (Attributes) (see [below for nested schema](#nestedatt--deviations))
 - `kind` (String)
 - `metadata` (Attributes) (see [below for nested schema](#nestedatt--metadata))
+- `spec` (Attributes) ConnectInterfaceSpec defines the desired state of ConnectInterface (see [below for nested schema](#nestedatt--spec))
 - `status` (Attributes) ConnectInterfaceStatus defines the observed state of ConnectInterface (see [below for nested schema](#nestedatt--status))
-
-<a id="nestedatt--spec"></a>
-### Nested Schema for `spec`
-
-Optional:
-
-- `bond` (Attributes) An Optional Bond definition, indicating the naming of a Bond on the Compute. (see [below for nested schema](#nestedatt--spec--bond))
-- `members` (Attributes List) A list of InterfaceMembers indicating which Compute Interfaces are part of this ConnectInterface.
-For non-LAG interfaces, this is a list of one element. (see [below for nested schema](#nestedatt--spec--members))
-
-<a id="nestedatt--spec--bond"></a>
-### Nested Schema for `spec.bond`
-
-Optional:
-
-- `chassis_id` (String) The Chassis ID of the top-of-rack switch to which this compute interface is connected, received through LLDP.
-- `host_name` (String) The FQDN of the host this compute port belongs to (eg. compute01.example.com).
-- `interface_name` (String) The logical interface name of the compute port (eg. eth0).
-- `port_id` (String) The Port ID of the top-of-rack switch to which this compute interface is connected, received through LLDP.
-- `system_name` (String) The System name of the top-of-rack switch to which this compute interface is connected, received through LLDP.
-
-
-<a id="nestedatt--spec--members"></a>
-### Nested Schema for `spec.members`
-
-Optional:
-
-- `chassis_id` (String) The Chassis ID of the top-of-rack switch to which this compute interface is connected, received through LLDP.
-- `host_name` (String) The FQDN of the host this compute port belongs to (eg. compute01.example.com).
-- `interface_name` (String) The logical interface name of the compute port (eg. eth0).
-- `port_id` (String) The Port ID of the top-of-rack switch to which this compute interface is connected, received through LLDP.
-- `system_name` (String) The System name of the top-of-rack switch to which this compute interface is connected, received through LLDP.
-
-
 
 <a id="nestedatt--alarms"></a>
 ### Nested Schema for `alarms`
@@ -96,6 +62,40 @@ Read-Only:
 - `labels` (Map of String)
 - `name` (String)
 - `namespace` (String)
+
+
+<a id="nestedatt--spec"></a>
+### Nested Schema for `spec`
+
+Read-Only:
+
+- `bond` (Attributes) An Optional Bond definition, indicating the naming of a Bond on the Compute. (see [below for nested schema](#nestedatt--spec--bond))
+- `members` (Attributes List) A list of InterfaceMembers indicating which Compute Interfaces are part of this ConnectInterface.
+For non-LAG interfaces, this is a list of one element. (see [below for nested schema](#nestedatt--spec--members))
+
+<a id="nestedatt--spec--bond"></a>
+### Nested Schema for `spec.bond`
+
+Read-Only:
+
+- `chassis_id` (String) The Chassis ID of the top-of-rack switch to which this compute interface is connected, received through LLDP.
+- `host_name` (String) The FQDN of the host this compute port belongs to (eg. compute01.example.com).
+- `interface_name` (String) The logical interface name of the compute port (eg. eth0).
+- `port_id` (String) The Port ID of the top-of-rack switch to which this compute interface is connected, received through LLDP.
+- `system_name` (String) The System name of the top-of-rack switch to which this compute interface is connected, received through LLDP.
+
+
+<a id="nestedatt--spec--members"></a>
+### Nested Schema for `spec.members`
+
+Read-Only:
+
+- `chassis_id` (String) The Chassis ID of the top-of-rack switch to which this compute interface is connected, received through LLDP.
+- `host_name` (String) The FQDN of the host this compute port belongs to (eg. compute01.example.com).
+- `interface_name` (String) The logical interface name of the compute port (eg. eth0).
+- `port_id` (String) The Port ID of the top-of-rack switch to which this compute interface is connected, received through LLDP.
+- `system_name` (String) The System name of the top-of-rack switch to which this compute interface is connected, received through LLDP.
+
 
 
 <a id="nestedatt--status"></a>

@@ -131,6 +131,7 @@ func ConnectPluginResourceSchema(ctx context.Context) schema.Schema {
 					},
 					"heartbeat_interval_seconds": schema.Int64Attribute{
 						Optional:            true,
+						Computed:            true,
 						Description:         "The interval in seconds in which the Plugin will heartbeat.\nWhen the interval is 0, heartbeating will be disabled.",
 						MarkdownDescription: "The interval in seconds in which the Plugin will heartbeat.\nWhen the interval is 0, heartbeating will be disabled.",
 					},
@@ -142,12 +143,14 @@ func ConnectPluginResourceSchema(ctx context.Context) schema.Schema {
 					"required_plugins": schema.ListAttribute{
 						ElementType:         types.StringType,
 						Optional:            true,
+						Computed:            true,
 						Description:         "A list of ConnectPlugins whose resources this ConnectPlugin will require, this signifies an explicit\nrelationship between this Plugin and the Required Plugins.",
 						MarkdownDescription: "A list of ConnectPlugins whose resources this ConnectPlugin will require, this signifies an explicit\nrelationship between this Plugin and the Required Plugins.",
 					},
 					"supported_actionables": schema.ListAttribute{
 						ElementType:         types.StringType,
 						Optional:            true,
+						Computed:            true,
 						Description:         "The list of Actionable identifiers that this Plugin supports.",
 						MarkdownDescription: "The list of Actionable identifiers that this Plugin supports.",
 					},

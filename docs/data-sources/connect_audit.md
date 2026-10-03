@@ -23,7 +23,6 @@ description: |-
 ### Optional
 
 - `hash` (String) resource content will be returned as it was at the time of this git hash
-- `spec` (Attributes) ConnectAuditSpec defines the desired state of ConnectAudit (see [below for nested schema](#nestedatt--spec))
 
 ### Read-Only
 
@@ -32,18 +31,8 @@ description: |-
 - `deviations` (Attributes) (see [below for nested schema](#nestedatt--deviations))
 - `kind` (String)
 - `metadata` (Attributes) (see [below for nested schema](#nestedatt--metadata))
+- `spec` (Attributes) ConnectAuditSpec defines the desired state of ConnectAudit (see [below for nested schema](#nestedatt--spec))
 - `status` (Attributes) ConnectAuditStatus defines the observed state of ConnectAudit (see [below for nested schema](#nestedatt--status))
-
-<a id="nestedatt--spec"></a>
-### Nested Schema for `spec`
-
-Optional:
-
-- `connect_plugin_name` (String) ConnectPluginName refers to the ConnectPlugin being audited.
-- `finished` (Boolean) Finished indicates whether the ConnectAudit is done running.
-- `scope` (String) Scope indicates the scope of the ConnectAudit.
-Currently supported scopes: Plugin.
-
 
 <a id="nestedatt--alarms"></a>
 ### Nested Schema for `alarms`
@@ -73,6 +62,17 @@ Read-Only:
 - `labels` (Map of String)
 - `name` (String)
 - `namespace` (String)
+
+
+<a id="nestedatt--spec"></a>
+### Nested Schema for `spec`
+
+Read-Only:
+
+- `connect_plugin_name` (String) ConnectPluginName refers to the ConnectPlugin being audited.
+- `finished` (Boolean) Finished indicates whether the ConnectAudit is done running.
+- `scope` (String) Scope indicates the scope of the ConnectAudit.
+Currently supported scopes: Plugin.
 
 
 <a id="nestedatt--status"></a>

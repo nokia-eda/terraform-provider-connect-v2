@@ -128,6 +128,7 @@ func ConnectInterfaceResourceSchema(ctx context.Context) schema.Schema {
 						Attributes: map[string]schema.Attribute{
 							"chassis_id": schema.StringAttribute{
 								Optional:            true,
+								Computed:            true,
 								Description:         "The Chassis ID of the top-of-rack switch to which this compute interface is connected, received through LLDP.",
 								MarkdownDescription: "The Chassis ID of the top-of-rack switch to which this compute interface is connected, received through LLDP.",
 							},
@@ -143,11 +144,13 @@ func ConnectInterfaceResourceSchema(ctx context.Context) schema.Schema {
 							},
 							"port_id": schema.StringAttribute{
 								Optional:            true,
+								Computed:            true,
 								Description:         "The Port ID of the top-of-rack switch to which this compute interface is connected, received through LLDP.",
 								MarkdownDescription: "The Port ID of the top-of-rack switch to which this compute interface is connected, received through LLDP.",
 							},
 							"system_name": schema.StringAttribute{
 								Optional:            true,
+								Computed:            true,
 								Description:         "The System name of the top-of-rack switch to which this compute interface is connected, received through LLDP.",
 								MarkdownDescription: "The System name of the top-of-rack switch to which this compute interface is connected, received through LLDP.",
 							},
@@ -158,6 +161,7 @@ func ConnectInterfaceResourceSchema(ctx context.Context) schema.Schema {
 							},
 						},
 						Optional:            true,
+						Computed:            true,
 						Description:         "An Optional Bond definition, indicating the naming of a Bond on the Compute.",
 						MarkdownDescription: "An Optional Bond definition, indicating the naming of a Bond on the Compute.",
 					},
@@ -166,6 +170,7 @@ func ConnectInterfaceResourceSchema(ctx context.Context) schema.Schema {
 							Attributes: map[string]schema.Attribute{
 								"chassis_id": schema.StringAttribute{
 									Optional:            true,
+									Computed:            true,
 									Description:         "The Chassis ID of the top-of-rack switch to which this compute interface is connected, received through LLDP.",
 									MarkdownDescription: "The Chassis ID of the top-of-rack switch to which this compute interface is connected, received through LLDP.",
 								},
@@ -181,11 +186,13 @@ func ConnectInterfaceResourceSchema(ctx context.Context) schema.Schema {
 								},
 								"port_id": schema.StringAttribute{
 									Optional:            true,
+									Computed:            true,
 									Description:         "The Port ID of the top-of-rack switch to which this compute interface is connected, received through LLDP.",
 									MarkdownDescription: "The Port ID of the top-of-rack switch to which this compute interface is connected, received through LLDP.",
 								},
 								"system_name": schema.StringAttribute{
 									Optional:            true,
+									Computed:            true,
 									Description:         "The System name of the top-of-rack switch to which this compute interface is connected, received through LLDP.",
 									MarkdownDescription: "The System name of the top-of-rack switch to which this compute interface is connected, received through LLDP.",
 								},

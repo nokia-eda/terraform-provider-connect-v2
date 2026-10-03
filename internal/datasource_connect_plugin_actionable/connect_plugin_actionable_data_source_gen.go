@@ -103,12 +103,12 @@ func ConnectPluginActionableDataSourceSchema(ctx context.Context) schema.Schema 
 				Attributes: map[string]schema.Attribute{
 					"attributes": schema.MapAttribute{
 						ElementType:         types.StringType,
-						Optional:            true,
+						Computed:            true,
 						Description:         "A map of attributes associated with the Verb for this Actionable.",
 						MarkdownDescription: "A map of attributes associated with the Verb for this Actionable.",
 					},
 					"verb": schema.StringAttribute{
-						Optional:            true,
+						Computed:            true,
 						Description:         "The keyword for the operation that should be executed by the Plugin (Eg. AuditRequested).",
 						MarkdownDescription: "The keyword for the operation that should be executed by the Plugin (Eg. AuditRequested).",
 					},
@@ -118,7 +118,7 @@ func ConnectPluginActionableDataSourceSchema(ctx context.Context) schema.Schema 
 						AttrTypes: SpecValue{}.AttributeTypes(ctx),
 					},
 				},
-				Optional:            true,
+				Computed:            true,
 				Description:         "ConnectPluginActionableSpec defines the desired state of ConnectPluginActionable",
 				MarkdownDescription: "ConnectPluginActionableSpec defines the desired state of ConnectPluginActionable",
 			},

@@ -35,10 +35,6 @@ description: |-
 <a id="nestedatt--items"></a>
 ### Nested Schema for `items`
 
-Optional:
-
-- `spec` (Attributes) ConnectAuditSpec defines the desired state of ConnectAudit (see [below for nested schema](#nestedatt--items--spec))
-
 Read-Only:
 
 - `alarms` (Attributes) (see [below for nested schema](#nestedatt--items--alarms))
@@ -46,18 +42,8 @@ Read-Only:
 - `deviations` (Attributes) (see [below for nested schema](#nestedatt--items--deviations))
 - `kind` (String)
 - `metadata` (Attributes) (see [below for nested schema](#nestedatt--items--metadata))
+- `spec` (Attributes) ConnectAuditSpec defines the desired state of ConnectAudit (see [below for nested schema](#nestedatt--items--spec))
 - `status` (Attributes) ConnectAuditStatus defines the observed state of ConnectAudit (see [below for nested schema](#nestedatt--items--status))
-
-<a id="nestedatt--items--spec"></a>
-### Nested Schema for `items.spec`
-
-Optional:
-
-- `connect_plugin_name` (String) ConnectPluginName refers to the ConnectPlugin being audited.
-- `finished` (Boolean) Finished indicates whether the ConnectAudit is done running.
-- `scope` (String) Scope indicates the scope of the ConnectAudit.
-Currently supported scopes: Plugin.
-
 
 <a id="nestedatt--items--alarms"></a>
 ### Nested Schema for `items.alarms`
@@ -87,6 +73,17 @@ Read-Only:
 - `labels` (Map of String)
 - `name` (String)
 - `namespace` (String)
+
+
+<a id="nestedatt--items--spec"></a>
+### Nested Schema for `items.spec`
+
+Read-Only:
+
+- `connect_plugin_name` (String) ConnectPluginName refers to the ConnectPlugin being audited.
+- `finished` (Boolean) Finished indicates whether the ConnectAudit is done running.
+- `scope` (String) Scope indicates the scope of the ConnectAudit.
+Currently supported scopes: Plugin.
 
 
 <a id="nestedatt--items--status"></a>

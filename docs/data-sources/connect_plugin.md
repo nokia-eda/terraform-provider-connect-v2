@@ -23,7 +23,6 @@ description: |-
 ### Optional
 
 - `hash` (String) resource content will be returned as it was at the time of this git hash
-- `spec` (Attributes) ConnectPluginSpec defines the desired state of ConnectPlugin (see [below for nested schema](#nestedatt--spec))
 
 ### Read-Only
 
@@ -32,21 +31,8 @@ description: |-
 - `deviations` (Attributes) (see [below for nested schema](#nestedatt--deviations))
 - `kind` (String)
 - `metadata` (Attributes) (see [below for nested schema](#nestedatt--metadata))
+- `spec` (Attributes) ConnectPluginSpec defines the desired state of ConnectPlugin (see [below for nested schema](#nestedatt--spec))
 - `status` (Attributes) ConnectPluginStatus defines the observed state of ConnectPlugin (see [below for nested schema](#nestedatt--status))
-
-<a id="nestedatt--spec"></a>
-### Nested Schema for `spec`
-
-Optional:
-
-- `description` (String) A human-readable representation of the Plugin.
-- `heartbeat_interval_seconds` (Number) The interval in seconds in which the Plugin will heartbeat.
-When the interval is 0, heartbeating will be disabled.
-- `plugin_type` (String) Indicates the type of the Cloud Management System managed by this Plugin. Eg. VMware, OpenStack.
-- `required_plugins` (List of String) A list of ConnectPlugins whose resources this ConnectPlugin will require, this signifies an explicit
-relationship between this Plugin and the Required Plugins.
-- `supported_actionables` (List of String) The list of Actionable identifiers that this Plugin supports.
-
 
 <a id="nestedatt--alarms"></a>
 ### Nested Schema for `alarms`
@@ -76,6 +62,20 @@ Read-Only:
 - `labels` (Map of String)
 - `name` (String)
 - `namespace` (String)
+
+
+<a id="nestedatt--spec"></a>
+### Nested Schema for `spec`
+
+Read-Only:
+
+- `description` (String) A human-readable representation of the Plugin.
+- `heartbeat_interval_seconds` (Number) The interval in seconds in which the Plugin will heartbeat.
+When the interval is 0, heartbeating will be disabled.
+- `plugin_type` (String) Indicates the type of the Cloud Management System managed by this Plugin. Eg. VMware, OpenStack.
+- `required_plugins` (List of String) A list of ConnectPlugins whose resources this ConnectPlugin will require, this signifies an explicit
+relationship between this Plugin and the Required Plugins.
+- `supported_actionables` (List of String) The list of Actionable identifiers that this Plugin supports.
 
 
 <a id="nestedatt--status"></a>

@@ -191,26 +191,26 @@
                     {
                         "name": "spec",
                         "single_nested": {
-                            "computed_optional_required": "optional",
+                            "computed_optional_required": "computed",
                             "attributes": [
                                 {
                                     "name": "connect_plugin_name",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "description": "ConnectPluginName refers to the ConnectPlugin being audited."
                                     }
                                 },
                                 {
                                     "name": "finished",
                                     "bool": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "description": "Finished indicates whether the ConnectAudit is done running."
                                     }
                                 },
                                 {
                                     "name": "scope",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "description": "Scope indicates the scope of the ConnectAudit.\nCurrently supported scopes: Plugin."
                                     }
                                 }
@@ -535,26 +535,26 @@
                                     {
                                         "name": "spec",
                                         "single_nested": {
-                                            "computed_optional_required": "optional",
+                                            "computed_optional_required": "computed",
                                             "attributes": [
                                                 {
                                                     "name": "connect_plugin_name",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "ConnectPluginName refers to the ConnectPlugin being audited."
                                                     }
                                                 },
                                                 {
                                                     "name": "finished",
                                                     "bool": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "Finished indicates whether the ConnectAudit is done running."
                                                     }
                                                 },
                                                 {
                                                     "name": "scope",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "Scope indicates the scope of the ConnectAudit.\nCurrently supported scopes: Plugin."
                                                     }
                                                 }
@@ -863,45 +863,45 @@
                     {
                         "name": "spec",
                         "single_nested": {
-                            "computed_optional_required": "optional",
+                            "computed_optional_required": "computed",
                             "attributes": [
                                 {
                                     "name": "bond",
                                     "single_nested": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "attributes": [
                                             {
                                                 "name": "chassis_id",
                                                 "string": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed",
                                                     "description": "The Chassis ID of the top-of-rack switch to which this compute interface is connected, received through LLDP."
                                                 }
                                             },
                                             {
                                                 "name": "host_name",
                                                 "string": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed",
                                                     "description": "The FQDN of the host this compute port belongs to (eg. compute01.example.com)."
                                                 }
                                             },
                                             {
                                                 "name": "interface_name",
                                                 "string": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed",
                                                     "description": "The logical interface name of the compute port (eg. eth0)."
                                                 }
                                             },
                                             {
                                                 "name": "port_id",
                                                 "string": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed",
                                                     "description": "The Port ID of the top-of-rack switch to which this compute interface is connected, received through LLDP."
                                                 }
                                             },
                                             {
                                                 "name": "system_name",
                                                 "string": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed",
                                                     "description": "The System name of the top-of-rack switch to which this compute interface is connected, received through LLDP."
                                                 }
                                             }
@@ -912,41 +912,41 @@
                                 {
                                     "name": "members",
                                     "list_nested": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "nested_object": {
                                             "attributes": [
                                                 {
                                                     "name": "chassis_id",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "The Chassis ID of the top-of-rack switch to which this compute interface is connected, received through LLDP."
                                                     }
                                                 },
                                                 {
                                                     "name": "host_name",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "The FQDN of the host this compute port belongs to (eg. compute01.example.com)."
                                                     }
                                                 },
                                                 {
                                                     "name": "interface_name",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "The logical interface name of the compute port (eg. eth0)."
                                                     }
                                                 },
                                                 {
                                                     "name": "port_id",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "The Port ID of the top-of-rack switch to which this compute interface is connected, received through LLDP."
                                                     }
                                                 },
                                                 {
                                                     "name": "system_name",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "The System name of the top-of-rack switch to which this compute interface is connected, received through LLDP."
                                                     }
                                                 }
@@ -1135,45 +1135,45 @@
                                     {
                                         "name": "spec",
                                         "single_nested": {
-                                            "computed_optional_required": "optional",
+                                            "computed_optional_required": "computed",
                                             "attributes": [
                                                 {
                                                     "name": "bond",
                                                     "single_nested": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "attributes": [
                                                             {
                                                                 "name": "chassis_id",
                                                                 "string": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "description": "The Chassis ID of the top-of-rack switch to which this compute interface is connected, received through LLDP."
                                                                 }
                                                             },
                                                             {
                                                                 "name": "host_name",
                                                                 "string": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "description": "The FQDN of the host this compute port belongs to (eg. compute01.example.com)."
                                                                 }
                                                             },
                                                             {
                                                                 "name": "interface_name",
                                                                 "string": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "description": "The logical interface name of the compute port (eg. eth0)."
                                                                 }
                                                             },
                                                             {
                                                                 "name": "port_id",
                                                                 "string": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "description": "The Port ID of the top-of-rack switch to which this compute interface is connected, received through LLDP."
                                                                 }
                                                             },
                                                             {
                                                                 "name": "system_name",
                                                                 "string": {
-                                                                    "computed_optional_required": "optional",
+                                                                    "computed_optional_required": "computed",
                                                                     "description": "The System name of the top-of-rack switch to which this compute interface is connected, received through LLDP."
                                                                 }
                                                             }
@@ -1184,41 +1184,41 @@
                                                 {
                                                     "name": "members",
                                                     "list_nested": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "nested_object": {
                                                             "attributes": [
                                                                 {
                                                                     "name": "chassis_id",
                                                                     "string": {
-                                                                        "computed_optional_required": "optional",
+                                                                        "computed_optional_required": "computed",
                                                                         "description": "The Chassis ID of the top-of-rack switch to which this compute interface is connected, received through LLDP."
                                                                     }
                                                                 },
                                                                 {
                                                                     "name": "host_name",
                                                                     "string": {
-                                                                        "computed_optional_required": "optional",
+                                                                        "computed_optional_required": "computed",
                                                                         "description": "The FQDN of the host this compute port belongs to (eg. compute01.example.com)."
                                                                     }
                                                                 },
                                                                 {
                                                                     "name": "interface_name",
                                                                     "string": {
-                                                                        "computed_optional_required": "optional",
+                                                                        "computed_optional_required": "computed",
                                                                         "description": "The logical interface name of the compute port (eg. eth0)."
                                                                     }
                                                                 },
                                                                 {
                                                                     "name": "port_id",
                                                                     "string": {
-                                                                        "computed_optional_required": "optional",
+                                                                        "computed_optional_required": "computed",
                                                                         "description": "The Port ID of the top-of-rack switch to which this compute interface is connected, received through LLDP."
                                                                     }
                                                                 },
                                                                 {
                                                                     "name": "system_name",
                                                                     "string": {
-                                                                        "computed_optional_required": "optional",
+                                                                        "computed_optional_required": "computed",
                                                                         "description": "The System name of the top-of-rack switch to which this compute interface is connected, received through LLDP."
                                                                     }
                                                                 }
@@ -1391,33 +1391,33 @@
                     {
                         "name": "spec",
                         "single_nested": {
-                            "computed_optional_required": "optional",
+                            "computed_optional_required": "computed",
                             "attributes": [
                                 {
                                     "name": "description",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "description": "A human-readable representation of the Plugin."
                                     }
                                 },
                                 {
                                     "name": "heartbeat_interval_seconds",
                                     "int64": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "description": "The interval in seconds in which the Plugin will heartbeat.\nWhen the interval is 0, heartbeating will be disabled."
                                     }
                                 },
                                 {
                                     "name": "plugin_type",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "description": "Indicates the type of the Cloud Management System managed by this Plugin. Eg. VMware, OpenStack."
                                     }
                                 },
                                 {
                                     "name": "required_plugins",
                                     "list": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "element_type": {
                                             "string": {}
                                         },
@@ -1427,7 +1427,7 @@
                                 {
                                     "name": "supported_actionables",
                                     "list": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "element_type": {
                                             "string": {}
                                         },
@@ -1581,12 +1581,12 @@
                     {
                         "name": "spec",
                         "single_nested": {
-                            "computed_optional_required": "optional",
+                            "computed_optional_required": "computed",
                             "attributes": [
                                 {
                                     "name": "attributes",
                                     "map": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "element_type": {
                                             "string": {}
                                         },
@@ -1596,7 +1596,7 @@
                                 {
                                     "name": "verb",
                                     "string": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed",
                                         "description": "The keyword for the operation that should be executed by the Plugin (Eg. AuditRequested)."
                                     }
                                 }
@@ -1764,12 +1764,12 @@
                                     {
                                         "name": "spec",
                                         "single_nested": {
-                                            "computed_optional_required": "optional",
+                                            "computed_optional_required": "computed",
                                             "attributes": [
                                                 {
                                                     "name": "attributes",
                                                     "map": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "element_type": {
                                                             "string": {}
                                                         },
@@ -1779,7 +1779,7 @@
                                                 {
                                                     "name": "verb",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "The keyword for the operation that should be executed by the Plugin (Eg. AuditRequested)."
                                                     }
                                                 }
@@ -1957,33 +1957,33 @@
                                     {
                                         "name": "spec",
                                         "single_nested": {
-                                            "computed_optional_required": "optional",
+                                            "computed_optional_required": "computed",
                                             "attributes": [
                                                 {
                                                     "name": "description",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "A human-readable representation of the Plugin."
                                                     }
                                                 },
                                                 {
                                                     "name": "heartbeat_interval_seconds",
                                                     "int64": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "The interval in seconds in which the Plugin will heartbeat.\nWhen the interval is 0, heartbeating will be disabled."
                                                     }
                                                 },
                                                 {
                                                     "name": "plugin_type",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "description": "Indicates the type of the Cloud Management System managed by this Plugin. Eg. VMware, OpenStack."
                                                     }
                                                 },
                                                 {
                                                     "name": "required_plugins",
                                                     "list": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "element_type": {
                                                             "string": {}
                                                         },
@@ -1993,7 +1993,7 @@
                                                 {
                                                     "name": "supported_actionables",
                                                     "list": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed",
                                                         "element_type": {
                                                             "string": {}
                                                         },
@@ -2662,12 +2662,12 @@
                                 {
                                     "name": "bond",
                                     "single_nested": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "attributes": [
                                             {
                                                 "name": "chassis_id",
                                                 "string": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed_optional",
                                                     "description": "The Chassis ID of the top-of-rack switch to which this compute interface is connected, received through LLDP."
                                                 }
                                             },
@@ -2688,14 +2688,14 @@
                                             {
                                                 "name": "port_id",
                                                 "string": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed_optional",
                                                     "description": "The Port ID of the top-of-rack switch to which this compute interface is connected, received through LLDP."
                                                 }
                                             },
                                             {
                                                 "name": "system_name",
                                                 "string": {
-                                                    "computed_optional_required": "optional",
+                                                    "computed_optional_required": "computed_optional",
                                                     "description": "The System name of the top-of-rack switch to which this compute interface is connected, received through LLDP."
                                                 }
                                             }
@@ -2712,7 +2712,7 @@
                                                 {
                                                     "name": "chassis_id",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed_optional",
                                                         "description": "The Chassis ID of the top-of-rack switch to which this compute interface is connected, received through LLDP."
                                                     }
                                                 },
@@ -2733,14 +2733,14 @@
                                                 {
                                                     "name": "port_id",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed_optional",
                                                         "description": "The Port ID of the top-of-rack switch to which this compute interface is connected, received through LLDP."
                                                     }
                                                 },
                                                 {
                                                     "name": "system_name",
                                                     "string": {
-                                                        "computed_optional_required": "optional",
+                                                        "computed_optional_required": "computed_optional",
                                                         "description": "The System name of the top-of-rack switch to which this compute interface is connected, received through LLDP."
                                                     }
                                                 }
@@ -2981,7 +2981,7 @@
                                 {
                                     "name": "heartbeat_interval_seconds",
                                     "int64": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "description": "The interval in seconds in which the Plugin will heartbeat.\nWhen the interval is 0, heartbeating will be disabled."
                                     }
                                 },
@@ -2995,7 +2995,7 @@
                                 {
                                     "name": "required_plugins",
                                     "list": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "element_type": {
                                             "string": {}
                                         },
@@ -3005,7 +3005,7 @@
                                 {
                                     "name": "supported_actionables",
                                     "list": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "element_type": {
                                             "string": {}
                                         },
@@ -3218,7 +3218,7 @@
                                 {
                                     "name": "attributes",
                                     "map": {
-                                        "computed_optional_required": "optional",
+                                        "computed_optional_required": "computed_optional",
                                         "element_type": {
                                             "string": {}
                                         },

@@ -102,17 +102,17 @@ func ConnectAuditDataSourceSchema(ctx context.Context) schema.Schema {
 			"spec": schema.SingleNestedAttribute{
 				Attributes: map[string]schema.Attribute{
 					"connect_plugin_name": schema.StringAttribute{
-						Optional:            true,
+						Computed:            true,
 						Description:         "ConnectPluginName refers to the ConnectPlugin being audited.",
 						MarkdownDescription: "ConnectPluginName refers to the ConnectPlugin being audited.",
 					},
 					"finished": schema.BoolAttribute{
-						Optional:            true,
+						Computed:            true,
 						Description:         "Finished indicates whether the ConnectAudit is done running.",
 						MarkdownDescription: "Finished indicates whether the ConnectAudit is done running.",
 					},
 					"scope": schema.StringAttribute{
-						Optional:            true,
+						Computed:            true,
 						Description:         "Scope indicates the scope of the ConnectAudit.\nCurrently supported scopes: Plugin.",
 						MarkdownDescription: "Scope indicates the scope of the ConnectAudit.\nCurrently supported scopes: Plugin.",
 					},
@@ -122,7 +122,7 @@ func ConnectAuditDataSourceSchema(ctx context.Context) schema.Schema {
 						AttrTypes: SpecValue{}.AttributeTypes(ctx),
 					},
 				},
-				Optional:            true,
+				Computed:            true,
 				Description:         "ConnectAuditSpec defines the desired state of ConnectAudit",
 				MarkdownDescription: "ConnectAuditSpec defines the desired state of ConnectAudit",
 			},

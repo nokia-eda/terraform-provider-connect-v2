@@ -104,29 +104,29 @@ func ConnectPluginListDataSourceSchema(ctx context.Context) schema.Schema {
 						"spec": schema.SingleNestedAttribute{
 							Attributes: map[string]schema.Attribute{
 								"description": schema.StringAttribute{
-									Optional:            true,
+									Computed:            true,
 									Description:         "A human-readable representation of the Plugin.",
 									MarkdownDescription: "A human-readable representation of the Plugin.",
 								},
 								"heartbeat_interval_seconds": schema.Int64Attribute{
-									Optional:            true,
+									Computed:            true,
 									Description:         "The interval in seconds in which the Plugin will heartbeat.\nWhen the interval is 0, heartbeating will be disabled.",
 									MarkdownDescription: "The interval in seconds in which the Plugin will heartbeat.\nWhen the interval is 0, heartbeating will be disabled.",
 								},
 								"plugin_type": schema.StringAttribute{
-									Optional:            true,
+									Computed:            true,
 									Description:         "Indicates the type of the Cloud Management System managed by this Plugin. Eg. VMware, OpenStack.",
 									MarkdownDescription: "Indicates the type of the Cloud Management System managed by this Plugin. Eg. VMware, OpenStack.",
 								},
 								"required_plugins": schema.ListAttribute{
 									ElementType:         types.StringType,
-									Optional:            true,
+									Computed:            true,
 									Description:         "A list of ConnectPlugins whose resources this ConnectPlugin will require, this signifies an explicit\nrelationship between this Plugin and the Required Plugins.",
 									MarkdownDescription: "A list of ConnectPlugins whose resources this ConnectPlugin will require, this signifies an explicit\nrelationship between this Plugin and the Required Plugins.",
 								},
 								"supported_actionables": schema.ListAttribute{
 									ElementType:         types.StringType,
-									Optional:            true,
+									Computed:            true,
 									Description:         "The list of Actionable identifiers that this Plugin supports.",
 									MarkdownDescription: "The list of Actionable identifiers that this Plugin supports.",
 								},
@@ -136,7 +136,7 @@ func ConnectPluginListDataSourceSchema(ctx context.Context) schema.Schema {
 									AttrTypes: SpecValue{}.AttributeTypes(ctx),
 								},
 							},
-							Optional:            true,
+							Computed:            true,
 							Description:         "ConnectPluginSpec defines the desired state of ConnectPlugin",
 							MarkdownDescription: "ConnectPluginSpec defines the desired state of ConnectPlugin",
 						},

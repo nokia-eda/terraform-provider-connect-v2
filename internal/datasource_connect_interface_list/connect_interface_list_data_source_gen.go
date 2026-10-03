@@ -106,27 +106,27 @@ func ConnectInterfaceListDataSourceSchema(ctx context.Context) schema.Schema {
 								"bond": schema.SingleNestedAttribute{
 									Attributes: map[string]schema.Attribute{
 										"chassis_id": schema.StringAttribute{
-											Optional:            true,
+											Computed:            true,
 											Description:         "The Chassis ID of the top-of-rack switch to which this compute interface is connected, received through LLDP.",
 											MarkdownDescription: "The Chassis ID of the top-of-rack switch to which this compute interface is connected, received through LLDP.",
 										},
 										"host_name": schema.StringAttribute{
-											Optional:            true,
+											Computed:            true,
 											Description:         "The FQDN of the host this compute port belongs to (eg. compute01.example.com).",
 											MarkdownDescription: "The FQDN of the host this compute port belongs to (eg. compute01.example.com).",
 										},
 										"interface_name": schema.StringAttribute{
-											Optional:            true,
+											Computed:            true,
 											Description:         "The logical interface name of the compute port (eg. eth0).",
 											MarkdownDescription: "The logical interface name of the compute port (eg. eth0).",
 										},
 										"port_id": schema.StringAttribute{
-											Optional:            true,
+											Computed:            true,
 											Description:         "The Port ID of the top-of-rack switch to which this compute interface is connected, received through LLDP.",
 											MarkdownDescription: "The Port ID of the top-of-rack switch to which this compute interface is connected, received through LLDP.",
 										},
 										"system_name": schema.StringAttribute{
-											Optional:            true,
+											Computed:            true,
 											Description:         "The System name of the top-of-rack switch to which this compute interface is connected, received through LLDP.",
 											MarkdownDescription: "The System name of the top-of-rack switch to which this compute interface is connected, received through LLDP.",
 										},
@@ -136,7 +136,7 @@ func ConnectInterfaceListDataSourceSchema(ctx context.Context) schema.Schema {
 											AttrTypes: BondValue{}.AttributeTypes(ctx),
 										},
 									},
-									Optional:            true,
+									Computed:            true,
 									Description:         "An Optional Bond definition, indicating the naming of a Bond on the Compute.",
 									MarkdownDescription: "An Optional Bond definition, indicating the naming of a Bond on the Compute.",
 								},
@@ -144,27 +144,27 @@ func ConnectInterfaceListDataSourceSchema(ctx context.Context) schema.Schema {
 									NestedObject: schema.NestedAttributeObject{
 										Attributes: map[string]schema.Attribute{
 											"chassis_id": schema.StringAttribute{
-												Optional:            true,
+												Computed:            true,
 												Description:         "The Chassis ID of the top-of-rack switch to which this compute interface is connected, received through LLDP.",
 												MarkdownDescription: "The Chassis ID of the top-of-rack switch to which this compute interface is connected, received through LLDP.",
 											},
 											"host_name": schema.StringAttribute{
-												Optional:            true,
+												Computed:            true,
 												Description:         "The FQDN of the host this compute port belongs to (eg. compute01.example.com).",
 												MarkdownDescription: "The FQDN of the host this compute port belongs to (eg. compute01.example.com).",
 											},
 											"interface_name": schema.StringAttribute{
-												Optional:            true,
+												Computed:            true,
 												Description:         "The logical interface name of the compute port (eg. eth0).",
 												MarkdownDescription: "The logical interface name of the compute port (eg. eth0).",
 											},
 											"port_id": schema.StringAttribute{
-												Optional:            true,
+												Computed:            true,
 												Description:         "The Port ID of the top-of-rack switch to which this compute interface is connected, received through LLDP.",
 												MarkdownDescription: "The Port ID of the top-of-rack switch to which this compute interface is connected, received through LLDP.",
 											},
 											"system_name": schema.StringAttribute{
-												Optional:            true,
+												Computed:            true,
 												Description:         "The System name of the top-of-rack switch to which this compute interface is connected, received through LLDP.",
 												MarkdownDescription: "The System name of the top-of-rack switch to which this compute interface is connected, received through LLDP.",
 											},
@@ -175,7 +175,7 @@ func ConnectInterfaceListDataSourceSchema(ctx context.Context) schema.Schema {
 											},
 										},
 									},
-									Optional:            true,
+									Computed:            true,
 									Description:         "A list of InterfaceMembers indicating which Compute Interfaces are part of this ConnectInterface.\nFor non-LAG interfaces, this is a list of one element.",
 									MarkdownDescription: "A list of InterfaceMembers indicating which Compute Interfaces are part of this ConnectInterface.\nFor non-LAG interfaces, this is a list of one element.",
 								},
@@ -185,7 +185,7 @@ func ConnectInterfaceListDataSourceSchema(ctx context.Context) schema.Schema {
 									AttrTypes: SpecValue{}.AttributeTypes(ctx),
 								},
 							},
-							Optional:            true,
+							Computed:            true,
 							Description:         "ConnectInterfaceSpec defines the desired state of ConnectInterface",
 							MarkdownDescription: "ConnectInterfaceSpec defines the desired state of ConnectInterface",
 						},

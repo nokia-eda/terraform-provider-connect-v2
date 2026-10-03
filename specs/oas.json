@@ -84,9 +84,7 @@
             "type": "string"
           },
           "values": {
-            "additionalProperties": {
-              "type": "object"
-            },
+            "additionalProperties": true,
             "description": "Associated data/information.\nThe error \"message\" may contain {{name}} escapes that should be substituted with information from this dictionary.\n\nNote that this map MUST NOT contain JSON objects (`{...}`) or arrays (`[...]`), only simple JSON types are permitted.",
             "type": "object"
           }
@@ -149,6 +147,10 @@
           "x-permissive": {
             "description": "For an \"add\" operation, an already-present field referenced by the \"path\" will\nresult in an error unless this field is true.  Similarly for a non-existent\ntarget field of a \"remove\" operation.",
             "type": "boolean"
+          },
+          "x-ui-annotation": {
+            "description": "Metadata maintained in support of the EDA UI.  External use not recommended.",
+            "type": "string"
           }
         },
         "required": [
@@ -581,10 +583,16 @@
           "endpoint_a_name": {
             "type": "string"
           },
+          "endpoint_a_namespace": {
+            "type": "string"
+          },
           "endpoint_b": {
             "$ref": "#/components/schemas/TopoOverlayEndpoint"
           },
           "endpoint_b_name": {
+            "type": "string"
+          },
+          "endpoint_b_namespace": {
             "type": "string"
           },
           "group_key": {
@@ -1141,6 +1149,10 @@
             "format": "date-time",
             "type": "string",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "group": "core.eda.nokia.com",
+                "title": "commitTime"
+              },
               "ui-order-priority": 50,
               "ui-title": "Commit Time",
               "ui-title-key": "commitTime"
@@ -1149,6 +1161,10 @@
           "hash": {
             "type": "string",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "group": "core.eda.nokia.com",
+                "title": "commitHash"
+              },
               "ui-order-priority": 40,
               "ui-title": "Commit Hash",
               "ui-title-key": "commitHash"
@@ -1157,6 +1173,14 @@
           "name": {
             "type": "string",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "group": "core.eda.nokia.com",
+                "title": "name"
+              },
+              "key": {
+                "index": 2,
+                "is-name": true
+              },
               "ui-order-priority": 10,
               "ui-title": "Name",
               "ui-title-key": "name"
@@ -1165,6 +1189,14 @@
           "namespace": {
             "type": "string",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "group": "core.eda.nokia.com",
+                "title": "namespace"
+              },
+              "key": {
+                "index": 1,
+                "is-namespace": true
+              },
               "ui-order-priority": 20,
               "ui-title": "Namespace",
               "ui-title-key": "namespace"
@@ -1174,6 +1206,10 @@
             "format": "uint64",
             "type": "integer",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "group": "core.eda.nokia.com",
+                "title": "transactionId"
+              },
               "ui-order-priority": 30,
               "ui-title": "Transaction ID",
               "ui-title-key": "transactionId"
@@ -1195,6 +1231,9 @@
             "readOnly": true,
             "type": "integer",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "title": "alarm_severities.critical"
+              },
               "ui-title": "Critical",
               "ui-title-key": "alarm_severities.critical"
             }
@@ -1204,6 +1243,9 @@
             "readOnly": true,
             "type": "integer",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "title": "alarm_severities.major"
+              },
               "ui-title": "Major",
               "ui-title-key": "alarm_severities.major"
             }
@@ -1213,6 +1255,9 @@
             "readOnly": true,
             "type": "integer",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "title": "alarm_severities.minor"
+              },
               "ui-title": "minor",
               "ui-title-key": "alarm_severities.minor"
             }
@@ -1222,6 +1267,9 @@
             "readOnly": true,
             "type": "integer",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "title": "alarm_severities.warning"
+              },
               "ui-title": "Warning",
               "ui-title-key": "alarm_severities.warning"
             }
@@ -1230,6 +1278,10 @@
         "readOnly": true,
         "type": "object",
         "x-eda-nokia-com": {
+          "i18n-keys": {
+            "group": "core.eda.nokia.com",
+            "title": "alarms"
+          },
           "ui-order-priority": 40,
           "ui-title": "Alarms",
           "ui-title-key": "alarms"
@@ -1242,6 +1294,9 @@
             "readOnly": true,
             "type": "integer",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "title": "count_column"
+              },
               "ui-title": "Count",
               "ui-title-key": "count_column"
             }
@@ -1250,6 +1305,10 @@
         "readOnly": true,
         "type": "object",
         "x-eda-nokia-com": {
+          "i18n-keys": {
+            "group": "core.eda.nokia.com",
+            "title": "deviations"
+          },
           "ui-order-priority": 50,
           "ui-title": "Deviations",
           "ui-title-key": "deviations"
@@ -1263,6 +1322,9 @@
             },
             "type": "object",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "title": "annotations"
+              },
               "ui-order-priority": 40,
               "ui-title": "Annotations",
               "ui-title-key": "annotations"
@@ -1274,6 +1336,9 @@
             },
             "type": "object",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "title": "labels"
+              },
               "ui-auto-completes": [
                 {
                   "condition": "true",
@@ -1293,7 +1358,15 @@
             "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*$",
             "type": "string",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "title": "name"
+              },
               "immutable": true,
+              "key": {
+                "index": 2,
+                "is-mirror": true,
+                "is-name": true
+              },
               "ui-order-priority": 10,
               "ui-pattern-error": "A valid name is made up of one or more components where each component is separated by period characters.  Each component must start and end with a lower case alphanumeric character and the body of the component is made up of zero or more lower case alphanumeric and hyphen characters.",
               "ui-title": "Name",
@@ -1303,7 +1376,15 @@
           "namespace": {
             "type": "string",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "title": "namespace"
+              },
               "immutable": true,
+              "key": {
+                "index": 1,
+                "is-mirror": true,
+                "is-namespace": true
+              },
               "ui-order-priority": 20,
               "ui-title": "Namespace",
               "ui-title-key": "namespace"
@@ -1316,6 +1397,10 @@
         ],
         "type": "object",
         "x-eda-nokia-com": {
+          "i18n-keys": {
+            "group": "core.eda.nokia.com",
+            "title": "metadata"
+          },
           "ui-order-priority": 10,
           "ui-title": "Metadata",
           "ui-title-key": "metadata"
@@ -1501,6 +1586,10 @@
             "format": "date-time",
             "type": "string",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "group": "core.eda.nokia.com",
+                "title": "commitTime"
+              },
               "ui-order-priority": 50,
               "ui-title": "Commit Time",
               "ui-title-key": "commitTime"
@@ -1509,6 +1598,10 @@
           "hash": {
             "type": "string",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "group": "core.eda.nokia.com",
+                "title": "commitHash"
+              },
               "ui-order-priority": 40,
               "ui-title": "Commit Hash",
               "ui-title-key": "commitHash"
@@ -1517,6 +1610,14 @@
           "name": {
             "type": "string",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "group": "core.eda.nokia.com",
+                "title": "name"
+              },
+              "key": {
+                "index": 2,
+                "is-name": true
+              },
               "ui-order-priority": 10,
               "ui-title": "Name",
               "ui-title-key": "name"
@@ -1525,6 +1626,14 @@
           "namespace": {
             "type": "string",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "group": "core.eda.nokia.com",
+                "title": "namespace"
+              },
+              "key": {
+                "index": 1,
+                "is-namespace": true
+              },
               "ui-order-priority": 20,
               "ui-title": "Namespace",
               "ui-title-key": "namespace"
@@ -1534,6 +1643,10 @@
             "format": "uint64",
             "type": "integer",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "group": "core.eda.nokia.com",
+                "title": "transactionId"
+              },
               "ui-order-priority": 30,
               "ui-title": "Transaction ID",
               "ui-title-key": "transactionId"
@@ -1555,6 +1668,9 @@
             "readOnly": true,
             "type": "integer",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "title": "alarm_severities.critical"
+              },
               "ui-title": "Critical",
               "ui-title-key": "alarm_severities.critical"
             }
@@ -1564,6 +1680,9 @@
             "readOnly": true,
             "type": "integer",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "title": "alarm_severities.major"
+              },
               "ui-title": "Major",
               "ui-title-key": "alarm_severities.major"
             }
@@ -1573,6 +1692,9 @@
             "readOnly": true,
             "type": "integer",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "title": "alarm_severities.minor"
+              },
               "ui-title": "minor",
               "ui-title-key": "alarm_severities.minor"
             }
@@ -1582,6 +1704,9 @@
             "readOnly": true,
             "type": "integer",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "title": "alarm_severities.warning"
+              },
               "ui-title": "Warning",
               "ui-title-key": "alarm_severities.warning"
             }
@@ -1590,6 +1715,10 @@
         "readOnly": true,
         "type": "object",
         "x-eda-nokia-com": {
+          "i18n-keys": {
+            "group": "core.eda.nokia.com",
+            "title": "alarms"
+          },
           "ui-order-priority": 40,
           "ui-title": "Alarms",
           "ui-title-key": "alarms"
@@ -1602,6 +1731,9 @@
             "readOnly": true,
             "type": "integer",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "title": "count_column"
+              },
               "ui-title": "Count",
               "ui-title-key": "count_column"
             }
@@ -1610,6 +1742,10 @@
         "readOnly": true,
         "type": "object",
         "x-eda-nokia-com": {
+          "i18n-keys": {
+            "group": "core.eda.nokia.com",
+            "title": "deviations"
+          },
           "ui-order-priority": 50,
           "ui-title": "Deviations",
           "ui-title-key": "deviations"
@@ -1623,6 +1759,9 @@
             },
             "type": "object",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "title": "annotations"
+              },
               "ui-order-priority": 40,
               "ui-title": "Annotations",
               "ui-title-key": "annotations"
@@ -1634,6 +1773,9 @@
             },
             "type": "object",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "title": "labels"
+              },
               "ui-auto-completes": [
                 {
                   "condition": "true",
@@ -1653,7 +1795,15 @@
             "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*$",
             "type": "string",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "title": "name"
+              },
               "immutable": true,
+              "key": {
+                "index": 2,
+                "is-mirror": true,
+                "is-name": true
+              },
               "ui-order-priority": 10,
               "ui-pattern-error": "A valid name is made up of one or more components where each component is separated by period characters.  Each component must start and end with a lower case alphanumeric character and the body of the component is made up of zero or more lower case alphanumeric and hyphen characters.",
               "ui-title": "Name",
@@ -1663,7 +1813,15 @@
           "namespace": {
             "type": "string",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "title": "namespace"
+              },
               "immutable": true,
+              "key": {
+                "index": 1,
+                "is-mirror": true,
+                "is-namespace": true
+              },
               "ui-order-priority": 20,
               "ui-title": "Namespace",
               "ui-title-key": "namespace"
@@ -1676,6 +1834,10 @@
         ],
         "type": "object",
         "x-eda-nokia-com": {
+          "i18n-keys": {
+            "group": "core.eda.nokia.com",
+            "title": "metadata"
+          },
           "ui-order-priority": 10,
           "ui-title": "Metadata",
           "ui-title-key": "metadata"
@@ -1910,6 +2072,10 @@
             "format": "date-time",
             "type": "string",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "group": "core.eda.nokia.com",
+                "title": "commitTime"
+              },
               "ui-order-priority": 50,
               "ui-title": "Commit Time",
               "ui-title-key": "commitTime"
@@ -1918,6 +2084,10 @@
           "hash": {
             "type": "string",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "group": "core.eda.nokia.com",
+                "title": "commitHash"
+              },
               "ui-order-priority": 40,
               "ui-title": "Commit Hash",
               "ui-title-key": "commitHash"
@@ -1926,6 +2096,14 @@
           "name": {
             "type": "string",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "group": "core.eda.nokia.com",
+                "title": "name"
+              },
+              "key": {
+                "index": 2,
+                "is-name": true
+              },
               "ui-order-priority": 10,
               "ui-title": "Name",
               "ui-title-key": "name"
@@ -1934,6 +2112,14 @@
           "namespace": {
             "type": "string",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "group": "core.eda.nokia.com",
+                "title": "namespace"
+              },
+              "key": {
+                "index": 1,
+                "is-namespace": true
+              },
               "ui-order-priority": 20,
               "ui-title": "Namespace",
               "ui-title-key": "namespace"
@@ -1943,6 +2129,10 @@
             "format": "uint64",
             "type": "integer",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "group": "core.eda.nokia.com",
+                "title": "transactionId"
+              },
               "ui-order-priority": 30,
               "ui-title": "Transaction ID",
               "ui-title-key": "transactionId"
@@ -1964,6 +2154,9 @@
             "readOnly": true,
             "type": "integer",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "title": "alarm_severities.critical"
+              },
               "ui-title": "Critical",
               "ui-title-key": "alarm_severities.critical"
             }
@@ -1973,6 +2166,9 @@
             "readOnly": true,
             "type": "integer",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "title": "alarm_severities.major"
+              },
               "ui-title": "Major",
               "ui-title-key": "alarm_severities.major"
             }
@@ -1982,6 +2178,9 @@
             "readOnly": true,
             "type": "integer",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "title": "alarm_severities.minor"
+              },
               "ui-title": "minor",
               "ui-title-key": "alarm_severities.minor"
             }
@@ -1991,6 +2190,9 @@
             "readOnly": true,
             "type": "integer",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "title": "alarm_severities.warning"
+              },
               "ui-title": "Warning",
               "ui-title-key": "alarm_severities.warning"
             }
@@ -1999,6 +2201,10 @@
         "readOnly": true,
         "type": "object",
         "x-eda-nokia-com": {
+          "i18n-keys": {
+            "group": "core.eda.nokia.com",
+            "title": "alarms"
+          },
           "ui-order-priority": 40,
           "ui-title": "Alarms",
           "ui-title-key": "alarms"
@@ -2011,6 +2217,9 @@
             "readOnly": true,
             "type": "integer",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "title": "count_column"
+              },
               "ui-title": "Count",
               "ui-title-key": "count_column"
             }
@@ -2019,6 +2228,10 @@
         "readOnly": true,
         "type": "object",
         "x-eda-nokia-com": {
+          "i18n-keys": {
+            "group": "core.eda.nokia.com",
+            "title": "deviations"
+          },
           "ui-order-priority": 50,
           "ui-title": "Deviations",
           "ui-title-key": "deviations"
@@ -2032,6 +2245,9 @@
             },
             "type": "object",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "title": "annotations"
+              },
               "ui-order-priority": 40,
               "ui-title": "Annotations",
               "ui-title-key": "annotations"
@@ -2043,6 +2259,9 @@
             },
             "type": "object",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "title": "labels"
+              },
               "ui-auto-completes": [
                 {
                   "condition": "true",
@@ -2062,7 +2281,15 @@
             "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*$",
             "type": "string",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "title": "name"
+              },
               "immutable": true,
+              "key": {
+                "index": 2,
+                "is-mirror": true,
+                "is-name": true
+              },
               "ui-order-priority": 10,
               "ui-pattern-error": "A valid name is made up of one or more components where each component is separated by period characters.  Each component must start and end with a lower case alphanumeric character and the body of the component is made up of zero or more lower case alphanumeric and hyphen characters.",
               "ui-title": "Name",
@@ -2072,7 +2299,15 @@
           "namespace": {
             "type": "string",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "title": "namespace"
+              },
               "immutable": true,
+              "key": {
+                "index": 1,
+                "is-mirror": true,
+                "is-namespace": true
+              },
               "ui-order-priority": 20,
               "ui-title": "Namespace",
               "ui-title-key": "namespace"
@@ -2085,6 +2320,10 @@
         ],
         "type": "object",
         "x-eda-nokia-com": {
+          "i18n-keys": {
+            "group": "core.eda.nokia.com",
+            "title": "metadata"
+          },
           "ui-order-priority": 10,
           "ui-title": "Metadata",
           "ui-title-key": "metadata"
@@ -2118,6 +2357,10 @@
             "format": "date-time",
             "type": "string",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "group": "core.eda.nokia.com",
+                "title": "commitTime"
+              },
               "ui-order-priority": 50,
               "ui-title": "Commit Time",
               "ui-title-key": "commitTime"
@@ -2126,6 +2369,10 @@
           "hash": {
             "type": "string",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "group": "core.eda.nokia.com",
+                "title": "commitHash"
+              },
               "ui-order-priority": 40,
               "ui-title": "Commit Hash",
               "ui-title-key": "commitHash"
@@ -2134,6 +2381,14 @@
           "name": {
             "type": "string",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "group": "core.eda.nokia.com",
+                "title": "name"
+              },
+              "key": {
+                "index": 2,
+                "is-name": true
+              },
               "ui-order-priority": 10,
               "ui-title": "Name",
               "ui-title-key": "name"
@@ -2142,6 +2397,14 @@
           "namespace": {
             "type": "string",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "group": "core.eda.nokia.com",
+                "title": "namespace"
+              },
+              "key": {
+                "index": 1,
+                "is-namespace": true
+              },
               "ui-order-priority": 20,
               "ui-title": "Namespace",
               "ui-title-key": "namespace"
@@ -2151,6 +2414,10 @@
             "format": "uint64",
             "type": "integer",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "group": "core.eda.nokia.com",
+                "title": "transactionId"
+              },
               "ui-order-priority": 30,
               "ui-title": "Transaction ID",
               "ui-title-key": "transactionId"
@@ -2172,6 +2439,9 @@
             "readOnly": true,
             "type": "integer",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "title": "alarm_severities.critical"
+              },
               "ui-title": "Critical",
               "ui-title-key": "alarm_severities.critical"
             }
@@ -2181,6 +2451,9 @@
             "readOnly": true,
             "type": "integer",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "title": "alarm_severities.major"
+              },
               "ui-title": "Major",
               "ui-title-key": "alarm_severities.major"
             }
@@ -2190,6 +2463,9 @@
             "readOnly": true,
             "type": "integer",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "title": "alarm_severities.minor"
+              },
               "ui-title": "minor",
               "ui-title-key": "alarm_severities.minor"
             }
@@ -2199,6 +2475,9 @@
             "readOnly": true,
             "type": "integer",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "title": "alarm_severities.warning"
+              },
               "ui-title": "Warning",
               "ui-title-key": "alarm_severities.warning"
             }
@@ -2207,6 +2486,10 @@
         "readOnly": true,
         "type": "object",
         "x-eda-nokia-com": {
+          "i18n-keys": {
+            "group": "core.eda.nokia.com",
+            "title": "alarms"
+          },
           "ui-order-priority": 40,
           "ui-title": "Alarms",
           "ui-title-key": "alarms"
@@ -2219,6 +2502,9 @@
             "readOnly": true,
             "type": "integer",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "title": "count_column"
+              },
               "ui-title": "Count",
               "ui-title-key": "count_column"
             }
@@ -2227,6 +2513,10 @@
         "readOnly": true,
         "type": "object",
         "x-eda-nokia-com": {
+          "i18n-keys": {
+            "group": "core.eda.nokia.com",
+            "title": "deviations"
+          },
           "ui-order-priority": 50,
           "ui-title": "Deviations",
           "ui-title-key": "deviations"
@@ -2240,6 +2530,9 @@
             },
             "type": "object",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "title": "annotations"
+              },
               "ui-order-priority": 40,
               "ui-title": "Annotations",
               "ui-title-key": "annotations"
@@ -2251,6 +2544,9 @@
             },
             "type": "object",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "title": "labels"
+              },
               "ui-auto-completes": [
                 {
                   "condition": "true",
@@ -2270,7 +2566,15 @@
             "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*$",
             "type": "string",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "title": "name"
+              },
               "immutable": true,
+              "key": {
+                "index": 2,
+                "is-mirror": true,
+                "is-name": true
+              },
               "ui-order-priority": 10,
               "ui-pattern-error": "A valid name is made up of one or more components where each component is separated by period characters.  Each component must start and end with a lower case alphanumeric character and the body of the component is made up of zero or more lower case alphanumeric and hyphen characters.",
               "ui-title": "Name",
@@ -2280,7 +2584,15 @@
           "namespace": {
             "type": "string",
             "x-eda-nokia-com": {
+              "i18n-keys": {
+                "title": "namespace"
+              },
               "immutable": true,
+              "key": {
+                "index": 1,
+                "is-mirror": true,
+                "is-namespace": true
+              },
               "ui-order-priority": 20,
               "ui-title": "Namespace",
               "ui-title-key": "namespace"
@@ -2293,6 +2605,10 @@
         ],
         "type": "object",
         "x-eda-nokia-com": {
+          "i18n-keys": {
+            "group": "core.eda.nokia.com",
+            "title": "metadata"
+          },
           "ui-order-priority": 10,
           "ui-title": "Metadata",
           "ui-title-key": "metadata"
@@ -2828,6 +3144,15 @@
             }
           },
           {
+            "description": "If true, pipelines will not be run for the resulting transaction",
+            "in": "query",
+            "name": "skipPipeline",
+            "schema": {
+              "default": false,
+              "type": "boolean"
+            }
+          },
+          {
             "description": "the namespace scope from which to perform the delete",
             "in": "path",
             "name": "namespace",
@@ -2991,6 +3316,15 @@
             }
           },
           {
+            "description": "If true, pipelines will not be run for the resulting transaction",
+            "in": "query",
+            "name": "skipPipeline",
+            "schema": {
+              "default": false,
+              "type": "boolean"
+            }
+          },
+          {
             "in": "path",
             "name": "namespace",
             "required": true,
@@ -3126,6 +3460,15 @@
             "description": "If true, prevents the transaction resulting from this request from being bundled with others.",
             "in": "query",
             "name": "disableBatching",
+            "schema": {
+              "default": false,
+              "type": "boolean"
+            }
+          },
+          {
+            "description": "If true, pipelines will not be run for the resulting transaction",
+            "in": "query",
+            "name": "skipPipeline",
             "schema": {
               "default": false,
               "type": "boolean"
@@ -3286,6 +3629,15 @@
             }
           },
           {
+            "description": "If true, pipelines will not be run for the resulting transaction",
+            "in": "query",
+            "name": "skipPipeline",
+            "schema": {
+              "default": false,
+              "type": "boolean"
+            }
+          },
+          {
             "in": "path",
             "name": "namespace",
             "required": true,
@@ -3364,6 +3716,15 @@
             "description": "If true, prevents the transaction resulting from this request from being bundled with others.",
             "in": "query",
             "name": "disableBatching",
+            "schema": {
+              "default": false,
+              "type": "boolean"
+            }
+          },
+          {
+            "description": "If true, pipelines will not be run for the resulting transaction",
+            "in": "query",
+            "name": "skipPipeline",
             "schema": {
               "default": false,
               "type": "boolean"
@@ -3709,6 +4070,15 @@
             }
           },
           {
+            "description": "If true, pipelines will not be run for the resulting transaction",
+            "in": "query",
+            "name": "skipPipeline",
+            "schema": {
+              "default": false,
+              "type": "boolean"
+            }
+          },
+          {
             "description": "the namespace scope from which to perform the delete",
             "in": "path",
             "name": "namespace",
@@ -3872,6 +4242,15 @@
             }
           },
           {
+            "description": "If true, pipelines will not be run for the resulting transaction",
+            "in": "query",
+            "name": "skipPipeline",
+            "schema": {
+              "default": false,
+              "type": "boolean"
+            }
+          },
+          {
             "in": "path",
             "name": "namespace",
             "required": true,
@@ -4007,6 +4386,15 @@
             "description": "If true, prevents the transaction resulting from this request from being bundled with others.",
             "in": "query",
             "name": "disableBatching",
+            "schema": {
+              "default": false,
+              "type": "boolean"
+            }
+          },
+          {
+            "description": "If true, pipelines will not be run for the resulting transaction",
+            "in": "query",
+            "name": "skipPipeline",
             "schema": {
               "default": false,
               "type": "boolean"
@@ -4167,6 +4555,15 @@
             }
           },
           {
+            "description": "If true, pipelines will not be run for the resulting transaction",
+            "in": "query",
+            "name": "skipPipeline",
+            "schema": {
+              "default": false,
+              "type": "boolean"
+            }
+          },
+          {
             "in": "path",
             "name": "namespace",
             "required": true,
@@ -4245,6 +4642,15 @@
             "description": "If true, prevents the transaction resulting from this request from being bundled with others.",
             "in": "query",
             "name": "disableBatching",
+            "schema": {
+              "default": false,
+              "type": "boolean"
+            }
+          },
+          {
+            "description": "If true, pipelines will not be run for the resulting transaction",
+            "in": "query",
+            "name": "skipPipeline",
             "schema": {
               "default": false,
               "type": "boolean"
@@ -4590,6 +4996,15 @@
             }
           },
           {
+            "description": "If true, pipelines will not be run for the resulting transaction",
+            "in": "query",
+            "name": "skipPipeline",
+            "schema": {
+              "default": false,
+              "type": "boolean"
+            }
+          },
+          {
             "description": "the namespace scope from which to perform the delete",
             "in": "path",
             "name": "namespace",
@@ -4753,6 +5168,15 @@
             }
           },
           {
+            "description": "If true, pipelines will not be run for the resulting transaction",
+            "in": "query",
+            "name": "skipPipeline",
+            "schema": {
+              "default": false,
+              "type": "boolean"
+            }
+          },
+          {
             "in": "path",
             "name": "namespace",
             "required": true,
@@ -4888,6 +5312,15 @@
             "description": "If true, prevents the transaction resulting from this request from being bundled with others.",
             "in": "query",
             "name": "disableBatching",
+            "schema": {
+              "default": false,
+              "type": "boolean"
+            }
+          },
+          {
+            "description": "If true, pipelines will not be run for the resulting transaction",
+            "in": "query",
+            "name": "skipPipeline",
             "schema": {
               "default": false,
               "type": "boolean"
@@ -5048,6 +5481,15 @@
             }
           },
           {
+            "description": "If true, pipelines will not be run for the resulting transaction",
+            "in": "query",
+            "name": "skipPipeline",
+            "schema": {
+              "default": false,
+              "type": "boolean"
+            }
+          },
+          {
             "in": "path",
             "name": "namespace",
             "required": true,
@@ -5126,6 +5568,15 @@
             "description": "If true, prevents the transaction resulting from this request from being bundled with others.",
             "in": "query",
             "name": "disableBatching",
+            "schema": {
+              "default": false,
+              "type": "boolean"
+            }
+          },
+          {
+            "description": "If true, pipelines will not be run for the resulting transaction",
+            "in": "query",
+            "name": "skipPipeline",
             "schema": {
               "default": false,
               "type": "boolean"
@@ -5471,6 +5922,15 @@
             }
           },
           {
+            "description": "If true, pipelines will not be run for the resulting transaction",
+            "in": "query",
+            "name": "skipPipeline",
+            "schema": {
+              "default": false,
+              "type": "boolean"
+            }
+          },
+          {
             "description": "the namespace scope from which to perform the delete",
             "in": "path",
             "name": "namespace",
@@ -5634,6 +6094,15 @@
             }
           },
           {
+            "description": "If true, pipelines will not be run for the resulting transaction",
+            "in": "query",
+            "name": "skipPipeline",
+            "schema": {
+              "default": false,
+              "type": "boolean"
+            }
+          },
+          {
             "in": "path",
             "name": "namespace",
             "required": true,
@@ -5769,6 +6238,15 @@
             "description": "If true, prevents the transaction resulting from this request from being bundled with others.",
             "in": "query",
             "name": "disableBatching",
+            "schema": {
+              "default": false,
+              "type": "boolean"
+            }
+          },
+          {
+            "description": "If true, pipelines will not be run for the resulting transaction",
+            "in": "query",
+            "name": "skipPipeline",
             "schema": {
               "default": false,
               "type": "boolean"
@@ -5929,6 +6407,15 @@
             }
           },
           {
+            "description": "If true, pipelines will not be run for the resulting transaction",
+            "in": "query",
+            "name": "skipPipeline",
+            "schema": {
+              "default": false,
+              "type": "boolean"
+            }
+          },
+          {
             "in": "path",
             "name": "namespace",
             "required": true,
@@ -6007,6 +6494,15 @@
             "description": "If true, prevents the transaction resulting from this request from being bundled with others.",
             "in": "query",
             "name": "disableBatching",
+            "schema": {
+              "default": false,
+              "type": "boolean"
+            }
+          },
+          {
+            "description": "If true, pipelines will not be run for the resulting transaction",
+            "in": "query",
+            "name": "skipPipeline",
             "schema": {
               "default": false,
               "type": "boolean"

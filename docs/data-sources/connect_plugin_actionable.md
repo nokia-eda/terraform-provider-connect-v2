@@ -23,7 +23,6 @@ description: |-
 ### Optional
 
 - `hash` (String) resource content will be returned as it was at the time of this git hash
-- `spec` (Attributes) ConnectPluginActionableSpec defines the desired state of ConnectPluginActionable (see [below for nested schema](#nestedatt--spec))
 
 ### Read-Only
 
@@ -32,16 +31,8 @@ description: |-
 - `deviations` (Attributes) (see [below for nested schema](#nestedatt--deviations))
 - `kind` (String)
 - `metadata` (Attributes) (see [below for nested schema](#nestedatt--metadata))
+- `spec` (Attributes) ConnectPluginActionableSpec defines the desired state of ConnectPluginActionable (see [below for nested schema](#nestedatt--spec))
 - `status` (Attributes) ConnectPluginActionableStatus defines the observed state of ConnectPluginActionable (see [below for nested schema](#nestedatt--status))
-
-<a id="nestedatt--spec"></a>
-### Nested Schema for `spec`
-
-Optional:
-
-- `attributes` (Map of String) A map of attributes associated with the Verb for this Actionable.
-- `verb` (String) The keyword for the operation that should be executed by the Plugin (Eg. AuditRequested).
-
 
 <a id="nestedatt--alarms"></a>
 ### Nested Schema for `alarms`
@@ -71,6 +62,15 @@ Read-Only:
 - `labels` (Map of String)
 - `name` (String)
 - `namespace` (String)
+
+
+<a id="nestedatt--spec"></a>
+### Nested Schema for `spec`
+
+Read-Only:
+
+- `attributes` (Map of String) A map of attributes associated with the Verb for this Actionable.
+- `verb` (String) The keyword for the operation that should be executed by the Plugin (Eg. AuditRequested).
 
 
 <a id="nestedatt--status"></a>

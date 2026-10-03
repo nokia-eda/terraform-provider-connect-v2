@@ -127,6 +127,7 @@ func ConnectPluginActionableResourceSchema(ctx context.Context) schema.Schema {
 					"attributes": schema.MapAttribute{
 						ElementType:         types.StringType,
 						Optional:            true,
+						Computed:            true,
 						Description:         "A map of attributes associated with the Verb for this Actionable.",
 						MarkdownDescription: "A map of attributes associated with the Verb for this Actionable.",
 					},

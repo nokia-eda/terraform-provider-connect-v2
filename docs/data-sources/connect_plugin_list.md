@@ -35,10 +35,6 @@ description: |-
 <a id="nestedatt--items"></a>
 ### Nested Schema for `items`
 
-Optional:
-
-- `spec` (Attributes) ConnectPluginSpec defines the desired state of ConnectPlugin (see [below for nested schema](#nestedatt--items--spec))
-
 Read-Only:
 
 - `alarms` (Attributes) (see [below for nested schema](#nestedatt--items--alarms))
@@ -46,21 +42,8 @@ Read-Only:
 - `deviations` (Attributes) (see [below for nested schema](#nestedatt--items--deviations))
 - `kind` (String)
 - `metadata` (Attributes) (see [below for nested schema](#nestedatt--items--metadata))
+- `spec` (Attributes) ConnectPluginSpec defines the desired state of ConnectPlugin (see [below for nested schema](#nestedatt--items--spec))
 - `status` (Attributes) ConnectPluginStatus defines the observed state of ConnectPlugin (see [below for nested schema](#nestedatt--items--status))
-
-<a id="nestedatt--items--spec"></a>
-### Nested Schema for `items.spec`
-
-Optional:
-
-- `description` (String) A human-readable representation of the Plugin.
-- `heartbeat_interval_seconds` (Number) The interval in seconds in which the Plugin will heartbeat.
-When the interval is 0, heartbeating will be disabled.
-- `plugin_type` (String) Indicates the type of the Cloud Management System managed by this Plugin. Eg. VMware, OpenStack.
-- `required_plugins` (List of String) A list of ConnectPlugins whose resources this ConnectPlugin will require, this signifies an explicit
-relationship between this Plugin and the Required Plugins.
-- `supported_actionables` (List of String) The list of Actionable identifiers that this Plugin supports.
-
 
 <a id="nestedatt--items--alarms"></a>
 ### Nested Schema for `items.alarms`
@@ -90,6 +73,20 @@ Read-Only:
 - `labels` (Map of String)
 - `name` (String)
 - `namespace` (String)
+
+
+<a id="nestedatt--items--spec"></a>
+### Nested Schema for `items.spec`
+
+Read-Only:
+
+- `description` (String) A human-readable representation of the Plugin.
+- `heartbeat_interval_seconds` (Number) The interval in seconds in which the Plugin will heartbeat.
+When the interval is 0, heartbeating will be disabled.
+- `plugin_type` (String) Indicates the type of the Cloud Management System managed by this Plugin. Eg. VMware, OpenStack.
+- `required_plugins` (List of String) A list of ConnectPlugins whose resources this ConnectPlugin will require, this signifies an explicit
+relationship between this Plugin and the Required Plugins.
+- `supported_actionables` (List of String) The list of Actionable identifiers that this Plugin supports.
 
 
 <a id="nestedatt--items--status"></a>
